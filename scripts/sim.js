@@ -4,11 +4,17 @@
 
 //===============DRAW THE ROAD===================
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
-    width = 900 - margin.left - margin.right,
+    width = 800 - margin.left - margin.right,
     height = 800 - margin.top - margin.bottom,
     radius = (width-200)/2,
     center = {x: width/2, y: height/2},
-    vel = .05*Math.PI;
+    numCars = 15,
+    vel = .05*Math.PI,
+    dec = -.02 * Math.PI,
+    acc = .01 * Math.PI,
+    tol = 2*Math.PI / (numCars +1 );
+
+var format = d3.format(",.3r")
 
 var svg = d3.select("#main").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -31,65 +37,121 @@ road.attr({
 	"stroke-width": "50px"
 });
 
+var	carsArray = d3.range(numCars).map(function(d,i){
+		var loc = 2*Math.PI / numCars * (i); 
+		return new Car(loc, i);
+	});
+
 function Car(location, index){
 	this.loc = location;
 	this.cart = cartize(this.loc);
 	this.index = index;
+	this.slow = 0;
 
 	this.checkD = function(){
-		var next = carsArray[index + 1],
-			s = next.loc - this.loc;
-	}	
+		var next = carsArray[index+1] || carsArray[0];
+		this.s = (next.loc > this.loc) ? (next.loc - this.loc) : (next.loc - this.loc + 2*Math.PI)
+	};
 
 	this.updateLoc = function(){
-		this.loc += vel;
+
+		var s = this.s,
+			c = 0;
+
+		if(s < tol){
+			c = dec;
+		}
+
+		if(s > tol){
+			c = acc;
+		}
+
+		this.vel = vel + c + this.slow;
+		this.loc = (this.vel + this.loc)%(2*Math.PI);
 		this.cart = cartize(this.loc);
+		this.slow = 0;
+	};
+
+	this.getVel = function(){
+		return this.vel;
+	}
+
+	this.slowClick = function(){
+		this.slow = -.03*Math.PI;
 	}
 
 }
 
-var numCars = 25,
-	carsArray = d3.range(numCars).map(function(d,i){
-		var loc = 2*Math.PI / numCars * (i+1); 
-		return new Car(loc, i);
+
+var gCar = svg.append("g")
+	.attr('class', 'g-cars');
+
+var car = gCar.selectAll('cars')
+	.data(carsArray)
+	.enter()
+	.append('g')
+	.attr({
+		class: function(d){
+			return "car " + d.index.toString()
+		},
+		transform: function(d){
+			return "translate(" + d.cart.x  + "," + d.cart.y + ") rotate(" + (-d.loc / (2*Math.PI) * 360) + ")";
+		}
 	});
 
 
-var gCars = svg.append("g")
-	.attr('class', 'g-cars');
-
-var cars = gCars.selectAll('cars')
-	.data(carsArray)
-	.enter()
-	.append('rect');
-
-
-cars.attr({
-	width: 10,
-	height: 20,
-	x: -5,
-	y: -10,
+car.append('rect').attr({
+	width: 20,
+	height: 40,
+	x: -10,
+	y: -20,
 	fill: "coral",
-	stroke: 'white',
-	transform: function(d){
-		return "translate(" + d.cart.x  + "," + d.cart.y + ") rotate(" + (-d.loc / (2*Math.PI) * 360) + ")";
-	}
+	stroke: 'white'
+})
+.on("click", function(d){
+	d.slowClick();
 });
 
+setTimeout(function(){
+
+	car.append("text")
+		.attr({
+			fill: "black",
+			dx: "3em",
+			dy: 0
+		})
+		.text(function(d){
+			return d.index.toString() + " " + format(d.getVel());
+		})
+	
+}, 800)
+
+var dur = 600
+
 function redraw(){
+
+	carsArray.forEach(function(d){
+		d.checkD();
+	})
 
 	carsArray.forEach(function(d){
 		d.updateLoc();
 	})
 
-	cars.transition()
-		.duration(600)
+	car.transition()
+		.duration(dur)
 		.ease('linear')
 		.attr("transform", function(d){
 			return "translate(" + d.cart.x  + "," + d.cart.y  + ") rotate(" + (-d.loc / (2*Math.PI) * 360) + ")";
+		});
+
+	car.selectAll('text')
+		.transition()
+		.text(function(d){
+			return d.index.toString() + " " + format(d.getVel());
 		})
 
 }
 
 
-setInterval(redraw, 600)
+setInterval(redraw, dur)

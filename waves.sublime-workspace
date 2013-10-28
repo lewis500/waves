@@ -19,6 +19,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "scripts/sim.js",
+			"settings":
+			{
+				"buffer_size": 1906,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "todo.txt",
+			"settings":
+			{
+				"buffer_size": 231,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -175,6 +191,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"1000",
+			"update",
+			"cartize",
+			"4",
+			"none",
+			"	\n",
 			"Hours",
 			"month",
 			"unemployment",
@@ -296,13 +318,7 @@
 			"not in list",
 			"dbustimes",
 			"devlist",
-			"json.stringif",
-			"data",
-			"busList",
-			"times",
-			"token",
-			"id",
-			"parsetimes"
+			"json.stringif"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -324,8 +340,65 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "scripts/sim.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1906,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1433,
+								1433
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 714.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "todo.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 231,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								144,
+								144
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
