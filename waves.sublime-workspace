@@ -1,0 +1,609 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"angular",
+				"angular-centered"
+			],
+			[
+				"update",
+				"updateToken"
+			],
+			[
+				"$roo",
+				"$rootScope"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 159.0,
+		"selected_items":
+		[
+			[
+				"jade",
+				"Set Syntax: Jade"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: li",
+				"Package Control: List Packages"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/lewis/Documents/github/waves/index.html",
+		"/home/lewis/Documents/github/waves/waves.sublime-project",
+		"/home/lewis/Documents/github/waves/styles/style.css",
+		"/home/lewis/Documents/github/waves/load.html",
+		"/home/lewis/Documents/github/freddie/scripts/directives/line.js",
+		"/home/lewis/Documents/github/freddie/example.js",
+		"/home/lewis/Documents/github/freddie/scripts/controllers/mainController.js",
+		"/home/lewis/Documents/github/freddie/views/main.html",
+		"/home/lewis/Documents/github/freddie/scripts/services/data.js",
+		"/home/lewis/Documents/github/freddie/scripts/controllers/todo.txt",
+		"/home/lewis/Documents/github/freddie/index.html",
+		"/home/lewis/Documents/github/freddie/styles/styles.css",
+		"/home/lewis/Documents/github/freddie/libraries/dc/dc.js",
+		"/home/lewis/Documents/github/freddie/start.html",
+		"/home/lewis/Documents/github/freddie/scripts/node_modules/dc/dc.css",
+		"/home/lewis/Documents/github/freddie/libraries/dc/dc.css",
+		"/home/lewis/Documents/github/freddie/scripts/app.js",
+		"/home/lewis/Documents/github/freddie/freddie.sublime-project",
+		"/home/lewis/Documents/github/freddie/libraries/dc.js-1.6.0/dc.js",
+		"/home/lewis/Documents/github/DashDispatch/app/inspectores/public/views/main.html",
+		"/home/lewis/Documents/github/DashDispatch/app/inspectores/public/scripts/services/cfg.js",
+		"/home/lewis/Documents/github/DashDispatch/app/inspectores/public/scripts/directives/microView.js",
+		"/home/lewis/Documents/github/DashDispatch/app/todo.txt",
+		"/home/lewis/Documents/github/DashDispatch/app/inspectores/public/scripts/app.js",
+		"/home/lewis/Documents/github/DashDispatch/app/inspectores/public/scripts/controllers/mainController.js",
+		"/home/lewis/Documents/github/DashDispatch/app/inspectores/public/styles/main.css",
+		"/home/lewis/Documents/github/DashDispatch/app/inspectores/public/scripts/controllers/navController.js",
+		"/home/lewis/Documents/github/DashDispatch/app/inspectores/public/scripts/services/UserService.js",
+		"/home/lewis/Documents/github/DashDispatch/app/server.js",
+		"/home/lewis/Documents/github/DashDispatch/app/busids.json",
+		"/home/lewis/Documents/github/DashDispatch/app/inspectores/public/scripts/controllers/settingsController.js",
+		"/home/lewis/Documents/github/DashDispatch/app/inspectores/public/scripts/services/data.js",
+		"/home/lewis/Downloads/via-agencies-nicknames-export.json",
+		"/home/lewis/Documents/github/DashDispatch/app/public/scripts/services/cfg.js",
+		"/home/lewis/Documents/github/DashDispatch/app/public/scripts/directives/sizer.js",
+		"/home/lewis/Documents/github/DashDispatch/app/public/scripts/controllers/settingsController.js",
+		"/home/lewis/Documents/github/DashDispatch/app/public/scripts/controllers/mainController.js",
+		"/home/lewis/Documents/github/DashDispatch/app/public/scripts/services/UserService.js",
+		"/home/lewis/Documents/github/DashDispatch/app/public/scripts/app.js",
+		"/home/lewis/Documents/github/DashDispatch/app/public/scripts/services/settings.js",
+		"/home/lewis/Documents/github/DashDispatch/app/index.html",
+		"/home/lewis/Documents/github/DashDispatch/node_modules/express/node_modules/connect/node_modules/formidable/example/json.js",
+		"/home/lewis/Documents/github/DashDispatch/app/public/views/main.html",
+		"/home/lewis/Documents/github/DashDispatch/app/public/scripts/directives/resizer.js",
+		"/home/lewis/Documents/github/DashDispatch/app/public/scripts/directives/microView.js",
+		"/home/lewis/Documents/github/heylewis.com/docs/bio.markdown",
+		"/home/lewis/Documents/github/querymaker/test.txt",
+		"/home/lewis/Documents/github/querymaker/querymaker.js",
+		"/home/lewis/Documents/github/DashDispatch/app/public/views/settings.html",
+		"/home/lewis/Documents/github/DashDispatch/app/public/flatui/css/flat-ui.css",
+		"/home/lewis/Documents/github/DashDispatch/app/public/styles/main.css",
+		"/home/lewis/Desktop/changes.txt",
+		"/home/lewis/Documents/github/DashDispatch/node_modules/connect-livereload/index.js",
+		"/home/lewis/Documents/github/DashDispatch/app/dashDispatch2.sublime-project",
+		"/home/lewis/Documents/github/DashDispatch/app/dashDispatch.sublime-project",
+		"/home/lewis/Documents/github/DashDispatch/test/spec/services/cfg.js",
+		"/home/lewis/Documents/github/my-project/public/js/controllers.js",
+		"/home/lewis/Documents/github/my-project/public/js/app.js",
+		"/home/lewis/Documents/github/my-project/routes/api.js",
+		"/home/lewis/Documents/github/my-project/app.js",
+		"/home/lewis/Documents/github/my-project/views/partials/deletePost.jade",
+		"/home/lewis/Documents/github/my-project/views/partials/index.jade",
+		"/home/lewis/Documents/github/my-project/views/partials/editPost.jade",
+		"/home/lewis/Documents/github/my-project/views/partials/addPost.jade",
+		"/home/lewis/Documents/github/my-project/views/partials/readPost.jade",
+		"/home/lewis/Documents/AngularTutorial-eBook-SourceCode/Source Code/app/controllers/fantasyteams.js",
+		"/home/lewis/Documents/AngularTutorial-eBook-SourceCode/Source Code/config/routes.js",
+		"/home/lewis/Documents/github/vudlab-website/new/bootstrap/css/juju.css",
+		"/home/lewis/Documents/github/vudlab-website/index.html",
+		"/home/lewis/Documents/github/vudlab-website/views/main.html",
+		"/home/lewis/Documents/github/vudlab-website/simpsons/views/bottom.html",
+		"/home/lewis/Documents/github/vudlab-website/bootstrap/img/noun_project_18205.svg",
+		"/home/lewis/Documents/AngularTutorial-eBook-SourceCode/Source Code/public/js/config.js",
+		"/home/lewis/Documents/AngularTutorial-eBook-SourceCode/Source Code/public/js/app.js",
+		"/home/lewis/Documents/AngularTutorial-eBook-SourceCode/Source Code/app/controllers/index.js",
+		"/home/lewis/Dropbox/research/note16.tex",
+		"/home/lewis/Dropbox/research/pricing.tex",
+		"/home/lewis/Dropbox/research/pricing2.eps_tex",
+		"/home/lewis/Insync/lewis500@gmail.com/research/bottleneck.tex",
+		"/home/lewis/Github/transit/index.html",
+		"/home/lewis/Insync/lewis500@gmail.com/research/note 6.tex",
+		"/home/lewis/Insync/lewis500@gmail.com/research/Default (Linux).sublime-keymap",
+		"/home/lewis/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/lewis/Insync/lewis500@gmail.com/research/research.sublime-project",
+		"/home/lewis/Insync/lewis500@gmail.com/Urban Challenge/website/test.html",
+		"/home/lewis/Insync/lewis500@gmail.com/Urban Challenge/website/spindex6.html",
+		"/home/lewis/Documents/Map/california.json",
+		"/home/lewis/Documents/Map/ne_10m_admin_0_map_subunits.dbf",
+		"/home/lewis/Insync/lewis500@gmail.com/Urban Challenge/website/test.js",
+		"/home/lewis/Documents/Map/subunits.json",
+		"/home/lewis/Documents/Map/sf.json",
+		"/home/lewis/Documents/Map/ne_10m_admin_0_map_subunits.shp",
+		"/home/lewis/Documents/Map/ne_10m_populated_places.VERSION.txt",
+		"/home/lewis/Documents/Map/ne_10m_populated_places.dbf",
+		"/home/lewis/Documents/Map/ne_10m_populated_places.prj"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Hours",
+			"month",
+			"unemployment",
+			"var",
+			"_barwidth",
+			"href",
+			"byMonthGroup",
+			"d3.time.month",
+			"monthlymoveg",
+			"movechart",
+			"volumeby",
+			"group",
+			"chartgroup",
+			"facts",
+			"render",
+			"movechart",
+			"area",
+			"fill",
+			"area",
+			"line",
+			"servicesd",
+			"services",
+			"Element",
+			"controlle",
+			"controller",
+			"iAttrsa",
+			"iAttrs",
+			"iElm",
+			"$scope",
+			"data",
+			"return",
+			"rdaes",
+			"barchart",
+			"attrs",
+			"      // attrs.$observe('height', function(){\n      //   console.log(attrs)\n      // })",
+			"src",
+			"buslabeler",
+			"image",
+			"imagebyke",
+			"gxaxis",
+			"gBands",
+			"group",
+			"bottom",
+			"suby",
+			"drawmicro",
+			"div",
+			"gxaxis",
+			"widthmaker",
+			"suby",
+			"y",
+			"grect",
+			"grects",
+			"subY",
+			"bus",
+			"isFree",
+			"buslabeler",
+			"buslabe",
+			"c0808431c5179bf",
+			"c1607bb19bf515f",
+			"c0808f6676ed0af",
+			"c08080a19e816bf",
+			"c0808d41440ee9f",
+			"c0808db1c899e30",
+			"c080883074f8c30",
+			"c0808ad18f107bf",
+			"c080827f31ba0cf",
+			"c08084601080ebf",
+			"c08086211720cbf",
+			"c080896137a1530",
+			"c08089a149c8fbf",
+			"c08082a189892bf",
+			"c0808be063c31af",
+			"c08082a188892bf",
+			"c0808bf09ba11bf",
+			"c0808391d2380bf",
+			"c08084e495b8230",
+			"c0808d31a5d76bf",
+			"c080898635d9730",
+			"c0808a3c343a130",
+			"c0808bfbd4bb430",
+			"c0808131a5b9d30",
+			"c0808a3f81d9d30",
+			"\"\n",
+			"780",
+			"737",
+			"735",
+			"734",
+			"723",
+			"722",
+			"489",
+			"488",
+			"486",
+			"485",
+			"484",
+			"483",
+			"482",
+			"481",
+			"479",
+			"478",
+			"477",
+			"476",
+			"475",
+			"474",
+			"473",
+			"472",
+			"471",
+			"470",
+			"459",
+			"457",
+			"455",
+			"c0808131a5b9d30",
+			"c0808a3f81d9d30",
+			"459",
+			"c0808131a5b9d30",
+			"c0808a3f81d9d30",
+			"457",
+			"455",
+			"devlist",
+			"not in list",
+			"dbustimes",
+			"devlist",
+			"json.stringif",
+			"data",
+			"busList",
+			"times",
+			"token",
+			"id",
+			"parsetimes"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"gData",
+			"g",
+			"devList",
+			"cfg"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"project": "waves.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"maincon",
+				"scripts/controllers/mainController.js"
+			],
+			[
+				"example",
+				"example.js"
+			],
+			[
+				"todo",
+				"scripts/controllers/todo.txt"
+			],
+			[
+				"maincontr",
+				"scripts/controllers/mainController.js"
+			],
+			[
+				"data.js",
+				"scripts/services/data.js"
+			],
+			[
+				"dc.js",
+				"libraries/dc/dc.js"
+			],
+			[
+				"style.css",
+				"styles/styles.css"
+			],
+			[
+				"styles.",
+				"styles/styles.css"
+			],
+			[
+				"main.",
+				"views/main.html"
+			],
+			[
+				"index.html",
+				"index.html"
+			],
+			[
+				"line.js",
+				"scripts/directives/line.js"
+			],
+			[
+				"dc.css",
+				"libraries/dc/dc.css"
+			],
+			[
+				"controll",
+				"scripts/controllers/mainController.js"
+			],
+			[
+				"main",
+				"views/main.html"
+			],
+			[
+				"app.js",
+				"scripts/app.js"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"contro",
+				"scripts/controllers/mainController.js"
+			],
+			[
+				"main.html",
+				"app/inspectores/public/views/main.html"
+			],
+			[
+				"cfg",
+				"app/inspectores/public/scripts/services/cfg.js"
+			],
+			[
+				"cfg.js",
+				"app/inspectores/public/scripts/services/cfg.js"
+			],
+			[
+				"microvi",
+				"app/inspectores/public/scripts/directives/microView.js"
+			],
+			[
+				"microv",
+				"app/inspectores/public/scripts/directives/microView.js"
+			],
+			[
+				"app.",
+				"app/inspectores/public/scripts/app.js"
+			],
+			[
+				"maincontro",
+				"app/inspectores/public/scripts/controllers/mainController.js"
+			],
+			[
+				"user",
+				"app/inspectores/public/scripts/services/UserService.js"
+			],
+			[
+				"app",
+				"app/inspectores/public/scripts/app.js"
+			],
+			[
+				"users",
+				"app/inspectores/public/scripts/services/UserService.js"
+			],
+			[
+				"data",
+				"app/inspectores/public/scripts/services/data.js"
+			],
+			[
+				"settings",
+				"app/inspectores/public/scripts/controllers/settingsController.js"
+			],
+			[
+				"server.js",
+				"app/server.js"
+			],
+			[
+				"userser",
+				"app/inspectores/public/scripts/services/UserService.js"
+			],
+			[
+				"settingscon",
+				"app/public/scripts/controllers/settingsController.js"
+			],
+			[
+				"sizer",
+				"app/public/scripts/directives/sizer.js"
+			],
+			[
+				"sett",
+				"app/public/scripts/controllers/settingsController.js"
+			],
+			[
+				"userse",
+				"app/public/scripts/services/UserService.js"
+			],
+			[
+				"index.ht",
+				"app/index.html"
+			],
+			[
+				"settin",
+				"app/public/scripts/services/settings.js"
+			],
+			[
+				"settings.js",
+				"app/public/scripts/services/settings.js"
+			],
+			[
+				"cfj.js",
+				"node_modules/express/node_modules/connect/node_modules/formidable/example/json.js"
+			],
+			[
+				"flat",
+				"app/public/flatui/css/flat-ui.css"
+			],
+			[
+				"settingscontr",
+				"app/public/scripts/controllers/settingsController.js"
+			],
+			[
+				"main.css",
+				"app/public/styles/main.css"
+			],
+			[
+				"settings.html",
+				"app/public/views/settings.html"
+			],
+			[
+				"index.js",
+				"node_modules/connect-livereload/index.js"
+			],
+			[
+				"index.jade",
+				"index.jade"
+			],
+			[
+				"juju.css",
+				"new/bootstrap/css/juju.css"
+			],
+			[
+				"bottom",
+				"simpsons/views/bottom.html"
+			],
+			[
+				"main.ht",
+				"views/main.html"
+			],
+			[
+				"idnex.h",
+				"index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/github/bottleneck/bottleneck.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 229.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

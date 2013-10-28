@@ -1,0 +1,17 @@
+set up html document
+draw a track
+create a car class
+counters for reaction times
+change the rx and ry rect properties to center their transforms
+
+CAR CLASS
+reaction time
+everything in polar coordinates
+
+
+
+
+
+
+LONG TERM
+get a car svg
