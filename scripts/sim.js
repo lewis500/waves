@@ -8,11 +8,11 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
     height = 800 - margin.top - margin.bottom,
     radius = (width-200)/2,
     center = {x: width/2, y: height/2},
-    numCars = 15,
+    numCars = 20,
     vel = .05*Math.PI,
-    dec = -.02 * Math.PI,
-    acc = .01 * Math.PI,
-    tol = 2*Math.PI / (numCars +1 );
+    dec = -.01 * Math.PI,
+    acc = .0025 * Math.PI,
+    tol = 2*Math.PI / (numCars + 1 );
 
 var format = d3.format(",.3r")
 
@@ -42,11 +42,14 @@ var	carsArray = d3.range(numCars).map(function(d,i){
 		return new Car(loc, i);
 	});
 
+var a = carsArray;
+
 function Car(location, index){
 	this.loc = location;
 	this.cart = cartize(this.loc);
 	this.index = index;
 	this.slow = 0;
+	this.vel = vel;
 
 	this.checkD = function(){
 		var next = carsArray[index+1] || carsArray[0];
@@ -62,14 +65,15 @@ function Car(location, index){
 			c = dec;
 		}
 
-		if(s > tol){
+		if(s >= tol){
 			c = acc;
 		}
 
-		this.vel = vel + c + this.slow;
-		this.loc = (this.vel + this.loc)%(2*Math.PI);
+		var move = d3.max([d3.min([this.vel + c + this.slow, vel]),0]);
+		this.loc = (move + this.loc)%(2*Math.PI);
 		this.cart = cartize(this.loc);
 		this.slow = 0;
+		this.vel = move;
 	};
 
 	this.getVel = function(){
@@ -95,38 +99,40 @@ var car = gCar.selectAll('cars')
 			return "car " + d.index.toString()
 		},
 		transform: function(d){
-			return "translate(" + d.cart.x  + "," + d.cart.y + ") rotate(" + (-d.loc / (2*Math.PI) * 360) + ")";
+			return "translate(" + d.cart.x  + "," + d.cart.y + ") rotate(" + -d.loc / (Math.PI * 2 ) * 360 + ")";
 		}
 	});
 
 
+var color = d3.scale.category20c().domain(d3.range(numCars))
+
 car.append('rect').attr({
 	width: 20,
-	height: 40,
+	height: 20,
 	x: -10,
-	y: -20,
-	fill: "coral",
+	y: -10,
+	fill: function(d,i){ return color(i); },
 	stroke: 'white'
 })
 .on("click", function(d){
 	d.slowClick();
 });
 
-setTimeout(function(){
+// setTimeout(function(){
 
-	car.append("text")
-		.attr({
-			fill: "black",
-			dx: "3em",
-			dy: 0
-		})
-		.text(function(d){
-			return d.index.toString() + " " + format(d.getVel());
-		})
+// 	car.append("text")
+// 		.attr({
+// 			fill: "black",
+// 			dx: "3em",
+// 			dy: 0
+// 		})
+// 		.text(function(d){
+// 			return d.index.toString() + "     " + format(d.getVel());
+// 		})
 	
-}, 800)
+// }, 800)
 
-var dur = 600
+var dur = 900;
 
 function redraw(){
 
@@ -140,16 +146,15 @@ function redraw(){
 
 	car.transition()
 		.duration(dur)
-		.ease('linear')
-		.attr("transform", function(d){
-			return "translate(" + d.cart.x  + "," + d.cart.y  + ") rotate(" + (-d.loc / (2*Math.PI) * 360) + ")";
+		.ease('linear')		.attr("transform", function(d){
+			return "translate(" + d.cart.x  + "," + d.cart.y  + ") rotate(" + -d.loc / (Math.PI * 2 ) * 360 + ")";
 		});
 
-	car.selectAll('text')
-		.transition()
-		.text(function(d){
-			return d.index.toString() + " " + format(d.getVel());
-		})
+	// car.selectAll('text')
+	// 	.transition()
+	// 	.text(function(d){
+	// 		return d.index.toString() + " " + format(d.getVel());
+	// 	})
 
 }
 
