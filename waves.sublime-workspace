@@ -19,22 +19,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "scripts/sim.js",
-			"settings":
-			{
-				"buffer_size": 1906,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "todo.txt",
-			"settings":
-			{
-				"buffer_size": 231,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -79,6 +63,8 @@
 	},
 	"file_history":
 	[
+		"/home/lewis/Documents/github/waves/todo.txt",
+		"/home/lewis/Documents/github/waves/scripts/sim.js",
 		"/home/lewis/Documents/github/waves/index.html",
 		"/home/lewis/Documents/github/waves/waves.sublime-project",
 		"/home/lewis/Documents/github/waves/styles/style.css",
@@ -191,6 +177,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"acc",
+			"updateloc",
+			"getvel",
+			"vel",
+			"text",
+			"fill",
+			"maxVel",
+			"this.vel",
+			"this.loc =",
+			"900",
+			"getvel",
+			"format",
+			"stroke",
+			"black",
+			"white",
+			"cars",
+			"updateloc",
 			"1000",
 			"update",
 			"cartize",
@@ -301,24 +304,7 @@
 			"475",
 			"474",
 			"473",
-			"472",
-			"471",
-			"470",
-			"459",
-			"457",
-			"455",
-			"c0808131a5b9d30",
-			"c0808a3f81d9d30",
-			"459",
-			"c0808131a5b9d30",
-			"c0808a3f81d9d30",
-			"457",
-			"455",
-			"devlist",
-			"not in list",
-			"dbustimes",
-			"devlist",
-			"json.stringif"
+			"472"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -326,6 +312,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"vel",
 			"gData",
 			"g",
 			"devList",
@@ -340,65 +327,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "scripts/sim.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1906,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1433,
-								1433
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
-						},
-						"translation.x": 0.0,
-						"translation.y": 714.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "todo.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 231,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								144,
-								144
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

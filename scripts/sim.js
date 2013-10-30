@@ -11,7 +11,7 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
     numCars = 20,
     vel = .05*Math.PI,
     dec = -.01 * Math.PI,
-    acc = .0025 * Math.PI,
+    acc = .005 * Math.PI,
     tol = 2*Math.PI / (numCars + 1 );
 
 var format = d3.format(",.3r")
@@ -52,6 +52,8 @@ function Car(location, index){
 	this.vel = vel;
 
 	this.checkD = function(){
+
+
 		var next = carsArray[index+1] || carsArray[0];
 		this.s = (next.loc > this.loc) ? (next.loc - this.loc) : (next.loc - this.loc + 2*Math.PI)
 	};
@@ -70,6 +72,7 @@ function Car(location, index){
 		}
 
 		var move = d3.max([d3.min([this.vel + c + this.slow, vel]),0]);
+
 		this.loc = (move + this.loc)%(2*Math.PI);
 		this.cart = cartize(this.loc);
 		this.slow = 0;
