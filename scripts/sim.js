@@ -7,12 +7,12 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
     numCars = 20,
     numPatches = 5000,
     tol = numPatches/numCars,
-    vel = numPatches/250,
+    vel = numPatches/400,
     dec = -vel*0.3,
     acc = vel*0.10,
     dur = 50,
     maxVel = vel*1.25,
-    minVel = 0;
+    minVel = vel*0.15;
 
 var format = d3.format(",.3r");
 
@@ -121,7 +121,7 @@ function Car(location, index){
 	this.index = index;
 	this.slow = false;
 	this.vel = vel;
-	this.moves = [vel, vel, vel];
+	this.moves = [vel, vel, vel, vel];
 
 	this.checkD = function(){
 		var next = cars[(index+1)%numCars];
@@ -157,7 +157,7 @@ function Car(location, index){
 			g = this.vel + acc;
 			move = d3.min([d3.max([g,minVel]), maxVel]);
 			this.vel = move;
-			this.moves = [vel, vel, vel];
+			this.moves = [vel, vel, vel, vel];
 		}
 
 		if(s< 4){
