@@ -28,7 +28,6 @@ var color= d3.scale.linear() //function that takes numbers & returns colors
 
 var sticker = d3.sticker("#car");
 
-
 var svg = d3.select("#main").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -43,8 +42,19 @@ road.attr({
 	cy: height/2,
 	fill: "none",
 	stroke: "#333",
-	"stroke-width": "50px"
+	"stroke-width": "90px"
 });
+
+var title = svg.append("g")
+	.attr("transform","translate(" + center.x + "," + center.y + ")")
+	.append("text")
+	.text("Traffic Waves!")
+	.attr({
+		"font-size":"25px",
+		"font":"sans-serif",
+		"text-align": "start"
+	})
+
 
 //=============SET UP ARRAYS===============
 
@@ -73,11 +83,17 @@ var car = gCar.selectAll('cars')
 	});
 
 car.append('g').call(sticker).attr({
-	transform: "scale(.6) rotate(95) translate(0, -10)",
+	transform: "scale(.7) rotate(95) translate(0, -10)",
 	fill: function(d,i){ return color(i); },
 	// stroke: 'white'
 })
 .on("click", function(d){
+	d3.select(this).transition().duration(200)
+		.attr("fill","white")
+		.transition()
+		.duration(100)
+		.delay(500)
+		.attr("fill", function(d,i){ return color(d.index);});
 	d.slowClick();
 });
 
