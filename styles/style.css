@@ -122,3 +122,8 @@
       /*visibility: visible;*/
       /*width: 135px;*/
     }
+
+
+.car{
+  cursor: pointer;
+}
