@@ -16,9 +16,18 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
 
 var format = d3.format(",.3r");
 
-var color = d3.scale.category20c().domain(d3.range(numCars));
+
+var color= d3.scale.linear() //function that takes numbers & returns colors
+    .domain(d3.extent(d3.range(numCars))) //domain of input data 1 to 38
+    .range(["#8F9CFC", "#DDE76A"])  //the color range
+    .interpolate(d3.interpolateHcl); //how to fill the inbetween colors
+
+// var color = d3.scale.category20c().domain(d3.range(numCars));
 
 //=============DRAW SVG AND ROAD===============
+
+var sticker = d3.sticker("#car");
+
 
 var svg = d3.select("#main").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -63,14 +72,8 @@ var car = gCar.selectAll('cars')
 		}
 	});
 
-
-car.append('image').attr({
-	"xlink:href": "styles/car.svg",
-	width: 30,
-	height: 40,
-	x: -20,
-	y: -20,
-	transform: "rotate(90)",
+car.append('g').call(sticker).attr({
+	transform: "scale(.6) rotate(95) translate(0, -10)",
 	fill: function(d,i){ return color(i); },
 	// stroke: 'white'
 })
@@ -107,7 +110,7 @@ function redraw(){
 
 	car.transition()
 		.duration(dur)
-		.ease('linear')		.attr("transform", function(d){
+		.ease('linear').attr("transform", function(d){
 			return "translate(" + d.cart.x  + "," + d.cart.y  + ") rotate(" + -d.loc / numPatches * 360 + ")";
 		});
 }
@@ -160,7 +163,7 @@ function Car(location, index){
 			this.moves = [vel, vel, vel, vel];
 		}
 
-		if(s< 4){
+		if(s< 3){
 			this.vel = 0;
 			this.moves = [0, 0, 0];
 		}
@@ -183,4 +186,7 @@ function Car(location, index){
 	};
 
 }
+
+
+
 
