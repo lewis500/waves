@@ -1,17 +1,15 @@
-set up html document
-draw a track
-create a car class
-counters for reaction times
-change the rx and ry rect properties to center their transforms
-
-CAR CLASS
-reaction time
-everything in polar coordinates
+SHORT TERM
 
 
+
+
+DISCRETIZE
+create the road class
+ceate the array of road objects
+redefine velocity and such in terms of the number of patches
 
 
 
 
 LONG TERM
-get a car svg
+car svg

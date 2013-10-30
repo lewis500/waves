@@ -1,8 +1,4 @@
-
-
-
-
-//===============DRAW THE ROAD===================
+//===============PARAMETERS===================
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 800 - margin.left - margin.right,
     height = 800 - margin.top - margin.bottom,
@@ -12,9 +8,16 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
     vel = .05*Math.PI,
     dec = -.01 * Math.PI,
     acc = .005 * Math.PI,
-    tol = 2*Math.PI / (numCars + 1 );
+    tol = 2*Math.PI / (numCars + 1 ),
+    numPatches = 500,
+    dur = 900
 
-var format = d3.format(",.3r")
+var format = d3.format(",.3r");
+
+var color = d3.scale.category20c().domain(d3.range(numCars))
+
+
+//=============DRAW SVG AND ROAD===============
 
 var svg = d3.select("#main").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -23,10 +26,6 @@ var svg = d3.select("#main").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var road = svg.append('circle');
-
-function cartize(ang){
-	return {x: (Math.cos(ang) * radius + center.x), y: (center.y - Math.sin(ang) * radius) }
-}
 
 road.attr({
 	r: radius,
@@ -37,12 +36,82 @@ road.attr({
 	"stroke-width": "50px"
 });
 
+//=============SET UP ARRAYS===============
+
 var	carsArray = d3.range(numCars).map(function(d,i){
 		var loc = 2*Math.PI / numCars * (i); 
 		return new Car(loc, i);
 	});
 
 var a = carsArray;
+
+var patches = _.map(d3.range(numPatches), function(d,i){
+	return new Patch(d/numPatches * 2 * Math.PI);
+});
+
+//=============DRAW THE CARS===============
+
+var gCar = svg.append("g")
+	.attr('class', 'g-cars');
+
+var car = gCar.selectAll('cars')
+	.data(carsArray)
+	.enter()
+	.append('g')
+	.attr({
+		class: function(d){
+			return "car " + d.index.toString()
+		},
+		transform: function(d){
+			return "translate(" + d.cart.x  + "," + d.cart.y + ") rotate(" + -d.loc / (Math.PI * 2 ) * 360 + ")";
+		}
+	});
+
+
+car.append('rect').attr({
+	width: 20,
+	height: 20,
+	x: -10,
+	y: -10,
+	fill: function(d,i){ return color(i); },
+	stroke: 'white'
+})
+.on("click", function(d){
+	d.slowClick();
+});
+
+
+//=============GET IT GOING===============
+
+setInterval(redraw, dur);
+
+
+//=============FUNCTIONS===============
+
+function cartize(ang){
+	return {x: (Math.cos(ang) * radius + center.x), y: (center.y - Math.sin(ang) * radius) }
+}
+
+
+function redraw(){
+
+	carsArray.forEach(function(d){
+		d.checkD();
+	})
+
+	carsArray.forEach(function(d){
+		d.updateLoc();
+	})
+
+	car.transition()
+		.duration(dur)
+		.ease('linear')		.attr("transform", function(d){
+			return "translate(" + d.cart.x  + "," + d.cart.y  + ") rotate(" + -d.loc / (Math.PI * 2 ) * 360 + ")";
+		});
+}
+
+
+//=============CLASSES===============
 
 function Car(location, index){
 	this.loc = location;
@@ -81,85 +150,18 @@ function Car(location, index){
 
 	this.getVel = function(){
 		return this.vel;
-	}
+	};
 
 	this.slowClick = function(){
 		this.slow = -.03*Math.PI;
-	}
+	};
 
 }
 
+function Patch(loc){
 
-var gCar = svg.append("g")
-	.attr('class', 'g-cars');
+	this.loc = loc;
 
-var car = gCar.selectAll('cars')
-	.data(carsArray)
-	.enter()
-	.append('g')
-	.attr({
-		class: function(d){
-			return "car " + d.index.toString()
-		},
-		transform: function(d){
-			return "translate(" + d.cart.x  + "," + d.cart.y + ") rotate(" + -d.loc / (Math.PI * 2 ) * 360 + ")";
-		}
-	});
+	this.occ = [];
 
-
-var color = d3.scale.category20c().domain(d3.range(numCars))
-
-car.append('rect').attr({
-	width: 20,
-	height: 20,
-	x: -10,
-	y: -10,
-	fill: function(d,i){ return color(i); },
-	stroke: 'white'
-})
-.on("click", function(d){
-	d.slowClick();
-});
-
-// setTimeout(function(){
-
-// 	car.append("text")
-// 		.attr({
-// 			fill: "black",
-// 			dx: "3em",
-// 			dy: 0
-// 		})
-// 		.text(function(d){
-// 			return d.index.toString() + "     " + format(d.getVel());
-// 		})
-	
-// }, 800)
-
-var dur = 900;
-
-function redraw(){
-
-	carsArray.forEach(function(d){
-		d.checkD();
-	})
-
-	carsArray.forEach(function(d){
-		d.updateLoc();
-	})
-
-	car.transition()
-		.duration(dur)
-		.ease('linear')		.attr("transform", function(d){
-			return "translate(" + d.cart.x  + "," + d.cart.y  + ") rotate(" + -d.loc / (Math.PI * 2 ) * 360 + ")";
-		});
-
-	// car.selectAll('text')
-	// 	.transition()
-	// 	.text(function(d){
-	// 		return d.index.toString() + " " + format(d.getVel());
-	// 	})
-
-}
-
-
-setInterval(redraw, dur)
+};
