@@ -1,19 +1,8 @@
-SHORT TERM
+create excel spreadsheet as per blog
+show students how to make their own excel spreadsheets
+make the cars slow down when you mouse over the road
 
+implement bootstrap
+bring in open sans font
 
-TRY TO SIMPLIFY WHAT YOU HAVE
-reframe in terms of increments
-change the scale
-
-
-
-DISCRETIZE
-create the road class
-ceate the array of road objects
-redefine velocity and such in terms of the number of patches
-
-
-
-
-LONG TERM
-car svg
+try to implement the scheme in the spreadsheet but with the caveat that the cars can only accelerate up to a certain rate and with max and minimum velocities. the main difference between my model and the spreadsheets now is that the spreadsheet's has reaction time for everything and has deeleration depend on the size of the distance between the cars.

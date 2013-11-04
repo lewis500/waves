@@ -19,6 +19,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "scripts/sim.js",
+			"settings":
+			{
+				"buffer_size": 4369,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -66,8 +74,10 @@
 		"/home/lewis/Documents/github/waves/todo.txt",
 		"/home/lewis/Documents/github/waves/scripts/sim.js",
 		"/home/lewis/Documents/github/waves/index.html",
-		"/home/lewis/Documents/github/waves/waves.sublime-project",
+		"/home/lewis/Documents/github/waves/libraries/sticker.js",
+		"/home/lewis/Documents/github/waves/styles/car.svg",
 		"/home/lewis/Documents/github/waves/styles/style.css",
+		"/home/lewis/Documents/github/waves/waves.sublime-project",
 		"/home/lewis/Documents/github/waves/load.html",
 		"/home/lewis/Documents/github/freddie/scripts/directives/line.js",
 		"/home/lewis/Documents/github/freddie/example.js",
@@ -177,6 +187,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"middle",
+			"text",
+			"500",
+			"200",
+			"100",
+			"click",
+			"150",
+			"slow",
+			"20",
+			"#",
+			"slowclick",
+			"patch",
+			"rotate",
+			"slow",
+			"patches",
+			"carsArray",
+			"cars",
 			"acc",
 			"updateloc",
 			"getvel",
@@ -287,24 +314,7 @@
 			"737",
 			"735",
 			"734",
-			"723",
-			"722",
-			"489",
-			"488",
-			"486",
-			"485",
-			"484",
-			"483",
-			"482",
-			"481",
-			"479",
-			"478",
-			"477",
-			"476",
-			"475",
-			"474",
-			"473",
-			"472"
+			"723"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -312,6 +322,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"cars",
 			"vel",
 			"gData",
 			"g",
@@ -327,8 +338,39 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "scripts/sim.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4369,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								381,
+								381
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -379,16 +421,32 @@
 		"selected_items":
 		[
 			[
+				"todo",
+				"todo.txt"
+			],
+			[
+				"",
+				"index.html"
+			],
+			[
+				"styles",
+				"styles/style.css"
+			],
+			[
+				"sim.js",
+				"scripts/sim.js"
+			],
+			[
+				"inde",
+				"index.html"
+			],
+			[
 				"maincon",
 				"scripts/controllers/mainController.js"
 			],
 			[
 				"example",
 				"example.js"
-			],
-			[
-				"todo",
-				"scripts/controllers/todo.txt"
 			],
 			[
 				"maincontr",
