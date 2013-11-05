@@ -13,9 +13,19 @@
 
   <body>
 
+  <script>
+
+    function Slow(){
+      console.log("LOG:","fired");
+      cars[0].slowClick();
+    }
+
+  </script>
+
+  <button onclick="Slow()">Slow it down.</button>
+
   <div id="main"></div>
 
-  <div class="tooltip"></div>
 
 
   <div id="sticker1" class="sticker" style="opacity: 0;">

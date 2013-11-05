@@ -1,3 +1,10 @@
+
+make sure they initialize at something like their equilibrium velocities
+
+
+
+
+
 create excel spreadsheet as per blog
 show students how to make their own excel spreadsheets
 make the cars slow down when you mouse over the road
