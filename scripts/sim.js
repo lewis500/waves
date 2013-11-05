@@ -4,13 +4,15 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
     height = 800 - margin.top - margin.bottom,
     radius = (width-100)/2,
     center = {x: width/2, y: height/2},
-    numCars = 10,
+    numCars = 40,
     numPatches = 1000,
-    vel = numPatches/100,
-    dur = 800,
+    vel = numPatches/(10*numCars),
+    dur = 50,
     maxVel = vel,
-    carLength = 15,
-    safeD = 2,
+    safeD =10,
+    acc = vel * .05,
+    dec = -vel * .2,
+    maxVel = vel,
     minVel = 0;
 
 var format = d3.format(",.3r");
@@ -83,7 +85,7 @@ var car = gCar.selectAll('cars')
 	});
 
 car.append('g').call(sticker).attr({
-	transform: "scale(1) rotate(95) translate(0," + radius + ")",
+	transform: "translate(0," + radius + ") scale(.5) ",
 	fill: function(d,i){ return color(i); },
 	// stroke: 'white'
 })
@@ -132,7 +134,7 @@ function Car(location, index){
 	this.index = index;
 	this.slow = false;
 	this.vel = vel;
-	this.pedals = [0];
+	this.pedals = [0,0,0,0];
 
 	this.checkD = function(){
 		var next = cars[(index+1)%numCars];
@@ -142,13 +144,16 @@ function Car(location, index){
 	this.updateLoc = function(){
 
 		var a = this.pedals.pop();
-		var b = this.vel + 0.5 * a;
-		// var c = d3.min([d3.max([b, minVel]), maxVel]);
-		this.loc = ((this.slow) ? this.loc : this.loc + a)%numPatches;
-		this.vel = d3.min([d3.max([this.vel + a, minVel]), maxVel]);
-		this.pedals.unshift(this.s - this.vel*safeD)
-		this.slow = false;
+		var m = (this.s > this.vel * safeD * 1.1) ? maxVel*1.05 : maxVel;
+		this.vel = d3.min([d3.max([this.vel + a, minVel]), m]);
 
+		this.loc = ((this.slow) ? this.loc : this.loc + this.vel)%numPatches;
+		var d = (this.s < this.vel * safeD) ? dec : acc;
+		this.pedals.unshift(d);
+
+		if(this.slow) this.pedals = [0,0,0,0]
+
+		this.slow = false;
 	};
 
 	this.slowClick = function(){
