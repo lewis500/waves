@@ -4,14 +4,13 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
     height = 800 - margin.top - margin.bottom,
     radius = (width-100)/2,
     center = {x: width/2, y: height/2},
-    numCars = 20,
+    numCars = 10,
     numPatches = 1000,
-    vel = numPatches/60,
-    dec = -vel*0.5,
-    acc = vel*0.3,
+    vel = numPatches/100,
     dur = 800,
     maxVel = vel,
     carLength = 15,
+    safeD = 2,
     minVel = 0;
 
 var format = d3.format(",.3r");
@@ -133,32 +132,21 @@ function Car(location, index){
 	this.index = index;
 	this.slow = false;
 	this.vel = vel;
-	this.moves = [vel, vel];
+	this.pedals = [0];
 
 	this.checkD = function(){
 		var next = cars[(index+1)%numCars];
 		this.s = (next.loc > this.loc) ? (next.loc - this.loc) : (next.loc - this.loc + numPatches);
-		this.z = this.vel * 2 + carLength;
 	};
 
 	this.updateLoc = function(){
 
-
-		if(this.s < this.z){
-			console.log("LOG:","dec");
-			g = this.vel + dec;
-			move = d3.min([d3.max([g, minVel]), maxVel]);
-			this.moves.unshift(move);
-		}
-
-		if(this.s >= this.z){
-			g = this.vel + acc;
-			move = d3.min([d3.max([g, minVel]), this.s]);
-			this.moves.unshift(move)
-		}
-
-		this.vel = this.moves.pop();
-		this.loc = ((this.slow) ? this.loc : this.vel + this.loc)%numPatches;
+		var a = this.pedals.pop();
+		var b = this.vel + 0.5 * a;
+		// var c = d3.min([d3.max([b, minVel]), maxVel]);
+		this.loc = ((this.slow) ? this.loc : this.loc + a)%numPatches;
+		this.vel = d3.min([d3.max([this.vel + a, minVel]), maxVel]);
+		this.pedals.unshift(this.s - this.vel*safeD)
 		this.slow = false;
 
 	};
