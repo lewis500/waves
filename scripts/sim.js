@@ -5,14 +5,14 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
     radius = (width-100)/2,
     center = {x: width/2, y: height/2},
     numCars = 20,
-    numPatches = 5000,
-    tol = numPatches/numCars,
-    vel = numPatches/400,
-    dec = -vel*0.3,
-    acc = vel*0.10,
-    dur = 50,
-    maxVel = vel*1.25,
-    minVel = vel*0.15;
+    numPatches = 1000,
+    vel = numPatches/60,
+    dec = -vel*0.5,
+    acc = vel*0.3,
+    dur = 800,
+    maxVel = vel,
+    carLength = 15,
+    minVel = 0;
 
 var format = d3.format(",.3r");
 
@@ -67,7 +67,8 @@ var	cars = d3.range(numCars).map(function(d,i){
 //=============DRAW THE CARS===============
 
 var gCar = svg.append("g")
-	.attr('class', 'g-cars');
+	.attr('class', 'g-cars')
+	.attr("transform","translate(" + center.x + "," + center.y + ")" );
 
 var car = gCar.selectAll('cars')
 	.data(cars)
@@ -78,22 +79,22 @@ var car = gCar.selectAll('cars')
 			return "car " + d.index.toString()
 		},
 		transform: function(d){
-			return "translate(" + d.cart.x  + "," + d.cart.y + ") rotate(" + -d.loc / numPatches * 360 + ")";
+			return "rotate(" + d.loc / numPatches * 360 + ")";
 		}
 	});
 
 car.append('g').call(sticker).attr({
-	transform: "scale(.7) rotate(95) translate(0, -10)",
+	transform: "scale(1) rotate(95) translate(0," + radius + ")",
 	fill: function(d,i){ return color(i); },
 	// stroke: 'white'
 })
 .on("click", function(d){
-	d3.select(this).transition().duration(200)
-		.attr("fill","white")
+	d3.select(this)
 		.transition()
-		.duration(100)
-		.delay(500)
+		.attr("fill","white")
+		.ease('linear')
 		.attr("fill", function(d,i){ return color(d.index);});
+
 	d.slowClick();
 });
 
@@ -104,15 +105,6 @@ setInterval(redraw, dur);
 
 
 //=============FUNCTIONS===============
-
-function cartize(patch){
-
-	var ang = patch/numPatches * 2 * Math.PI;
-
-	return {x: (Math.cos(ang) * radius + center.x), y: (center.y - Math.sin(ang) * radius) };
-
-}
-
 
 function redraw(){
 
@@ -126,9 +118,11 @@ function redraw(){
 
 	car.transition()
 		.duration(dur)
-		.ease('linear').attr("transform", function(d){
-			return "translate(" + d.cart.x  + "," + d.cart.y  + ") rotate(" + -d.loc / numPatches * 360 + ")";
-		});
+		.ease('linear')
+		.attr("transform", function(d){
+			return "rotate(" + d.loc / numPatches * 360 + ")";
+		})
+
 }
 
 
@@ -136,65 +130,37 @@ function redraw(){
 
 function Car(location, index){
 	this.loc = location;
-	this.cart = cartize(this.loc);
 	this.index = index;
 	this.slow = false;
 	this.vel = vel;
-	this.moves = [vel, vel, vel, vel];
+	this.moves = [vel, vel];
 
 	this.checkD = function(){
 		var next = cars[(index+1)%numCars];
 		this.s = (next.loc > this.loc) ? (next.loc - this.loc) : (next.loc - this.loc + numPatches);
-		this.nextVel = next.vel;
+		this.z = this.vel * 2 + carLength;
 	};
 
 	this.updateLoc = function(){
 
-		var s = this.s,
-			c = 0;
 
-		var g = 0;
-		var move = 0;
-
-
-
-		if(s <= tol){
-			if(this.nextVel < this.vel){
-				g = this.vel + dec;
-				move = d3.min([d3.max([g,minVel]), maxVel]);
-				this.vel = this.moves.pop();
-				this.moves.unshift(move);
-			}else{
-				g = this.vel;
-				move = d3.min([d3.max([g,minVel]), maxVel]);
-				this.vel = this.moves.pop();
-				this.moves.unshift(move);
-			}
+		if(this.s < this.z){
+			console.log("LOG:","dec");
+			g = this.vel + dec;
+			move = d3.min([d3.max([g, minVel]), maxVel]);
+			this.moves.unshift(move);
 		}
 
-		if(s > tol){
+		if(this.s >= this.z){
 			g = this.vel + acc;
-			move = d3.min([d3.max([g,minVel]), maxVel]);
-			this.vel = move;
-			this.moves = [vel, vel, vel, vel];
+			move = d3.min([d3.max([g, minVel]), this.s]);
+			this.moves.unshift(move)
 		}
 
-		if(s< 3){
-			this.vel = 0;
-			this.moves = [0, 0, 0];
-		}
-
-		if(this.slow) {
-			this.vel = -10;
-		}
-
-		this.loc = (this.vel + this.loc)%numPatches;
-		this.cart = cartize(this.loc);
+		this.vel = this.moves.pop();
+		this.loc = ((this.slow) ? this.loc : this.vel + this.loc)%numPatches;
 		this.slow = false;
-	};
 
-	this.getVel = function(){
-		return this.vel;
 	};
 
 	this.slowClick = function(){

@@ -23,7 +23,7 @@
 			"file": "scripts/sim.js",
 			"settings":
 			{
-				"buffer_size": 4369,
+				"buffer_size": 3709,
 				"line_ending": "Unix"
 			}
 		}
@@ -72,8 +72,8 @@
 	"file_history":
 	[
 		"/home/lewis/Documents/github/waves/todo.txt",
-		"/home/lewis/Documents/github/waves/scripts/sim.js",
 		"/home/lewis/Documents/github/waves/index.html",
+		"/home/lewis/Documents/github/waves/scripts/sim.js",
 		"/home/lewis/Documents/github/waves/libraries/sticker.js",
 		"/home/lewis/Documents/github/waves/styles/car.svg",
 		"/home/lewis/Documents/github/waves/styles/style.css",
@@ -187,6 +187,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"transition",
+			"carlength",
+			"transform",
+			"transition",
+			"translate",
+			"d3.timer",
+			"dur",
+			"moves",
+			"this.slow",
+			"dur",
+			"numpatches",
+			"scale",
+			"width",
+			"redraw",
+			"d3.timer",
+			"transition",
+			"dur",
+			"transform",
+			"duration",
+			"dur =",
+			"dur",
+			"getvel",
 			"middle",
 			"text",
 			"500",
@@ -292,29 +314,7 @@
 			"c0808db1c899e30",
 			"c080883074f8c30",
 			"c0808ad18f107bf",
-			"c080827f31ba0cf",
-			"c08084601080ebf",
-			"c08086211720cbf",
-			"c080896137a1530",
-			"c08089a149c8fbf",
-			"c08082a189892bf",
-			"c0808be063c31af",
-			"c08082a188892bf",
-			"c0808bf09ba11bf",
-			"c0808391d2380bf",
-			"c08084e495b8230",
-			"c0808d31a5d76bf",
-			"c080898635d9730",
-			"c0808a3c343a130",
-			"c0808bfbd4bb430",
-			"c0808131a5b9d30",
-			"c0808a3f81d9d30",
-			"\"\n",
-			"780",
-			"737",
-			"735",
-			"734",
-			"723"
+			"c080827f31ba0cf"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -347,15 +347,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4369,
+						"buffer_size": 3709,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								381,
-								381
+								2093,
+								2093
 							]
 						],
 						"settings":
@@ -363,10 +363,48 @@
 							"history_list_is_closing": true,
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false,
-							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?",
+							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 858.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "scripts/sim.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3709,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3351,
+								3351
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1359.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -391,11 +429,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -425,16 +470,20 @@
 				"todo.txt"
 			],
 			[
+				"index",
+				"index.html"
+			],
+			[
+				"sim.js",
+				"scripts/sim.js"
+			],
+			[
 				"",
 				"index.html"
 			],
 			[
 				"styles",
 				"styles/style.css"
-			],
-			[
-				"sim.js",
-				"scripts/sim.js"
 			],
 			[
 				"inde",
@@ -495,10 +544,6 @@
 			[
 				"app.js",
 				"scripts/app.js"
-			],
-			[
-				"index",
-				"index.html"
 			],
 			[
 				"contro",
@@ -642,7 +687,7 @@
 		[
 			[
 				"",
-				"~/Documents/github/bottleneck/bottleneck.sublime-project"
+				"~/Documents/github/DashDispatch/app/dashDispatch2.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -662,7 +707,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 229.0,
+	"side_bar_width": 135.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
