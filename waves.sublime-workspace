@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"sa",
+				"safeD"
+			],
+			[
 				"angular",
 				"angular-centered"
 			],
@@ -19,19 +27,11 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "scripts/sim.js",
-			"settings":
-			{
-				"buffer_size": 3709,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 159.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
@@ -51,7 +51,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 467.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -71,9 +71,13 @@
 	},
 	"file_history":
 	[
-		"/home/lewis/Documents/github/waves/todo.txt",
-		"/home/lewis/Documents/github/waves/index.html",
 		"/home/lewis/Documents/github/waves/scripts/sim.js",
+		"/home/lewis/Documents/github/waves/index.html",
+		"/home/lewis/Documents/github/waves/todo.txt",
+		"/home/lewis/Documents/github/waves/text.txt",
+		"/home/lewis/Documents/asdf/src/de/trafficsimulation/IDMCar.java",
+		"/home/lewis/Documents/asdf/src/de/trafficsimulation/IDM.java",
+		"/home/lewis/Documents/phantom/de/trafficsimulation/IDMCar.class",
 		"/home/lewis/Documents/github/waves/libraries/sticker.js",
 		"/home/lewis/Documents/github/waves/styles/car.svg",
 		"/home/lewis/Documents/github/waves/styles/style.css",
@@ -187,6 +191,44 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"slowclick",
+			"linear",
+			"fill",
+			"redraw",
+			"d.v",
+			"fill",
+			"slowclick",
+			"mouseleave",
+			"t ",
+			".ease",
+			"numpatches",
+			"update(",
+			"transitio",
+			"trans",
+			"update",
+			"choose",
+			"update(",
+			".update",
+			"translate",
+			"30",
+			"slowcli",
+			"40",
+			"1000",
+			"this.v =",
+			"acc",
+			"scale",
+			"*3",
+			"* 3",
+			"choose",
+			"dec",
+			"slowclick",
+			"n.",
+			"car",
+			"cars =",
+			"loc",
+			"40",
+			"scale",
+			"maxVel",
 			"transition",
 			"carlength",
 			"transform",
@@ -276,45 +318,7 @@
 			"controller",
 			"iAttrsa",
 			"iAttrs",
-			"iElm",
-			"$scope",
-			"data",
-			"return",
-			"rdaes",
-			"barchart",
-			"attrs",
-			"      // attrs.$observe('height', function(){\n      //   console.log(attrs)\n      // })",
-			"src",
-			"buslabeler",
-			"image",
-			"imagebyke",
-			"gxaxis",
-			"gBands",
-			"group",
-			"bottom",
-			"suby",
-			"drawmicro",
-			"div",
-			"gxaxis",
-			"widthmaker",
-			"suby",
-			"y",
-			"grect",
-			"grects",
-			"subY",
-			"bus",
-			"isFree",
-			"buslabeler",
-			"buslabe",
-			"c0808431c5179bf",
-			"c1607bb19bf515f",
-			"c0808f6676ed0af",
-			"c08080a19e816bf",
-			"c0808d41440ee9f",
-			"c0808db1c899e30",
-			"c080883074f8c30",
-			"c0808ad18f107bf",
-			"c080827f31ba0cf"
+			"iElm"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -338,77 +342,13 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "scripts/sim.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3709,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2093,
-								2093
-							]
-						],
-						"settings":
-						{
-							"history_list_is_closing": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?",
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 858.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "scripts/sim.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3709,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3351,
-								3351
-							]
-						],
-						"settings":
-						{
-							"history_list_is_closing": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?",
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1359.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -466,16 +406,20 @@
 		"selected_items":
 		[
 			[
+				"sim.js",
+				"scripts/sim.js"
+			],
+			[
 				"todo",
 				"todo.txt"
 			],
 			[
-				"index",
+				"index.",
 				"index.html"
 			],
 			[
-				"sim.js",
-				"scripts/sim.js"
+				"index",
+				"index.html"
 			],
 			[
 				"",
@@ -707,7 +651,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 135.0,
+	"side_bar_width": 244.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -20,13 +20,32 @@
       cars[0].slowClick();
     }
 
+    function Pause(){
+     paused = true;
+    }
+
+    function Restart(){
+      if(paused){
+       paused = false;
+       d3.timer(function(elapsed) {
+         t = (elapsed - last)/dur * tPerm;
+         last = elapsed;
+         redraw();
+         return paused;
+       });
+      }
+
+    }
+
+
+
   </script>
 
-  <button onclick="Slow()">Slow it down.</button>
+  <button onclick="Slow()">Perturb it..</button>
+  <button onclick="Pause()">Pause it.</button>
+  <button onclick="Restart()">Restart it.</button>
 
   <div id="main"></div>
-
-
 
   <div id="sticker1" class="sticker" style="opacity: 0;">
     <svg width="60.78429"  height="26.852531" viewBox="0 0 60.78429 26.85253">

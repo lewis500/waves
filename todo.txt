@@ -1,22 +1,20 @@
+SHORT TERM
 
-make sure they initialize at something like their equilibrium velocities
+do all kinds of renaming for the classes and functions and such
+make the 85 you subtract out a variable of its own
+redraw the car itself to be correct rather than transforming it
+
+put invisible arcs over the cars
+create a ghz line chart like in wolfram alpha
+make the color change when you click on an element
+can you substitute a single letter for "this"?
+make a function that draws the cars and move it to the bottom to make the code cleaner
+create a reset button
+
+ARCS
+have every car calculate its own start and end
 
 
-
-
-
-create excel spreadsheet as per blog
-show students how to make their own excel spreadsheets
-make the cars slow down when you mouse over the road
-
-
-
-
-use the v + 1/2a^2 formula
-
-
-
-implement bootstrap
-bring in open sans font
-
-try to implement the scheme in the spreadsheet but with the caveat that the cars can only accelerate up to a certain rate and with max and minimum velocities. the main difference between my model and the spreadsheets now is that the spreadsheet's has reaction time for everything and has deeleration depend on the size of the distance between the cars.
+LONG TERM
+try the ghz formula
+you can do the arc calculation easier by doing a sort of gap before and gap after and then adding them
