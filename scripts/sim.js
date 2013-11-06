@@ -11,10 +11,11 @@ var numCars = 35,
 		tPerm = 0.5,
     t = .5,
     numPatches = 1000,
-    vo = 25, 
+    vo = 20,
+    // maxV = 30, 
     sMin = 2,
     L = 10,
-    T = 1.5,
+    T = 2,
     acc = 0.5,
     dec = 3;
 
@@ -168,8 +169,13 @@ var numCars = 35,
 // setInterval(redraw, dur);
 var paused = false;
 var last = 0;
+var numLoop = 0;
+
 d3.timer(function(elapsed) {
   t = (elapsed - last)/dur * tPerm;
+  // T = 10*t;
+  numLoop++
+  if(numLoop%25 ==0) console.log(t)
   last = elapsed;
   redraw();
   return paused;
@@ -239,7 +245,8 @@ function Car(xo, index){
 		xNew = x + v*t + 0.5*a*Math.pow(t,2);
 
 		this.x = xNew % numPatches;
-		this.v = d3.max([vNew,0]);
+		this.v = d3.min([d3.max([vNew,0]),vo]);
+		if(this.v == vo) this.a = 0;
 
 		var n = cars[(index+1)%numCars];
 		if(this.x > n.x && (this.x - n.x < numPatches/2)){
