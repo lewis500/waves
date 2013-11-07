@@ -190,6 +190,9 @@ var numCars = 30,
 				transform: function(d){
 					return "rotate(" + -d.x / numPatches * 360 + ")";
 				}
+			})
+			.on("click", function(d){
+				d.slowClick();
 			});
 
 	var carArcInner = car.append('path')
@@ -210,9 +213,10 @@ var numCars = 30,
 				fill: function(d,i){ return color(d.v); },
 				// stroke: 'white'
 			})
-		.on("click", function(d){
-			d.slowClick();
-		});
+			.on("click", function(d){
+				d.slowClick();
+			});
+
 
 	var carArc = car.append('path')
 		.attr({
@@ -221,6 +225,9 @@ var numCars = 30,
 			opacity: 0.5,
 			fill: function(d,i){ return colorAcc(d.a); },
 			// stroke: "#666"
+		})
+		.on("click", function(d){
+			d.slowClick();
 		});
 
 
