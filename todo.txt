@@ -1,23 +1,18 @@
 SHORT TERM
 add a legend
-add flatui styles
-
-
+add tooltips
+combine the pause and restart buttons w/ jquery
+change cricles to cars
+add pause and play buttons
 
 MED TERM
 redraw the car itself to be correct rather than transforming it
-make the 85 you subtract out a variable of its own
 make the color change when you click on an element
 
-create a reset button
-fix the breaking
 tooltips
 
 
 LONG TERM
-combine the two visualizations into one sheet
 use fisheye effect on the cars
 add a slider to control the reaction times
-incorporate the lead car
 try the ghz formula
-you can do the arc calculation easier by doing a sort of gap before and gap after and then adding them

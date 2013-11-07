@@ -4,22 +4,6 @@
       cars[0].slowClick();
     }
 
-    function Pause(){
-     paused = true;
-    }
-
-    function Restart(){
-      if(paused){
-       paused = false;
-       d3.timer(function(elapsed) {
-         t = (elapsed - last)/dur * tPerm % .5;
-         last = elapsed;
-         redraw();
-         return paused;
-       });
-      }
-    }
-
     function Set(){
 
     	cars.forEach(function(d,i){
@@ -32,23 +16,41 @@
     	})
     }
 
-    $("#slow").on("click",function(){
-    	Slow();
-    })
 
-    $("#pause").on("click",Pause)
-    $("#restart").on("click",Restart)
-    $("#reset").on("click",Set)
+
+    $("#pause").on("click",function(){
+	    paused = !paused;
+
+    	if(!paused){
+    		$(this).html("Pause");
+    		d3.timer(function(elapsed) {
+    		  t = (elapsed - last)/dur * tPerm % .5;
+    		  last = elapsed;
+    		  redraw();
+    		  return paused;
+    		});
+    	}else{
+    		$(this).html("Play");
+    	};
+  		
+  		$(this).toggleClass("btn-warning");
+  		$(this).toggleClass("btn-success");
+
+    });
+
+    $("#reset").on("click",Set);
 
 
 //===============PARAMETERS===================
-var margin = {top: 20, right: 20, bottom: 30, left: 50},
+var margin = {top: 0, right: 20, bottom: 0, left: 20},
     width = 700 - margin.left - margin.right,
     height = 700 - margin.top - margin.bottom,
     radius = (width-150)/2,
     center = {x: width/2, y: height/2},
     durPerm = 55,
     dur = 55;
+
+	console.log(radius)
 
 var numCars = 30,
 		tPerm = 0.5,
@@ -80,13 +82,13 @@ var numCars = 30,
   var toRads = 2*Math.PI;
       
   var y = d3.scale.linear()
-  		.domain([-5,1.5])
-  		.range([0,radius + 135])
+  		.domain([-7,1.5])
+  		.range([0,radius + 102.5])
   		// .clamp(true);
 
   var offset = L;    
 
-  var interiorGap = 95;
+  var interiorGap = 80;
 
   var arc = d3.svg.arc()
       .innerRadius(function(d){
@@ -149,6 +151,20 @@ var numCars = 30,
 			.on('mouseout', function(){
 				dur = durPerm
 		});
+
+	road.append("foreignObject")
+	    .attr("transform","translate(" + (center.x + - 150/2) +  "," + ( center.y +  - 45/2) + ")" )
+	    .attr("width", 200)
+	    .attr("height", 200)
+	  .append("xhtml:div")
+	  	// .attr("class","col-lg-5")
+	    .html('<button id="slow" class="btn  btn-info btn-lg">Hit the brakes.</button>'
+	    	+ '<p>(start some traffic waves)</p>');
+			 
+
+	$("#slow").on("click",function(){
+		Slow();
+	})
 
 	//=============SET UP ARRAYS===============
 
@@ -223,7 +239,6 @@ d3.timer(function(elapsed) {
   last = elapsed;
   redraw();
 
-  if(numLoop == 1000) console.log(cars[0].v)
   return paused;
 });
 

@@ -16,38 +16,55 @@
 
 <body>
 
+
   <div class="container">
+  <div class="jumbotron">
+    <h1>Traffic Waves</h1>
+  </div>
 
-  <h1>Traffic Waves</h1>
 
-  <div id="chartExplanation" class="col-lg-7">
-  
-      <p>Traffic waves are...</p>
-      <p>They happen because of two facts about driving: <br> First, cars take longer to speed up than to slow down, so if you brake suddenly then it will take you a while to reach your original speed. Second, people have <em>reaction times</em>...if the car in front of you slows down all of a sudden, you don't slow down until a couple seconds later. And the more time you lose reacting, the harder you have to brake to keep a safe distance. </p>
-      <p>Therefore, a crowded road has very unstable traffic. If one car brakes, then the car behind it has to brake harder, and the car behind that one has to brake even harder, and so on. Drag the slider below to see how one car slowing down (the grey one) makes other cars slow down even more.</p>
+<!--     <div id="chartExplanation" class="col-lg-7">
     
-  </div>
-    
-  <div class="chart" style="margin-bottom: 50px">
-    <div id="velocity"></div>
-    <div id="road"></div>
-    <div id="slider1"></div>
-  </div>
 
+      
+    </div> -->
+    <div class="clearfix"></div>
+    <div class= "row">
+      <div class ="col-lg-3" style="margin-top: 5%">
 
-  <div class ="col-lg-6">
-    <button id="slow" class="btn btn-primary">Perturb it..</button>
-    <button id="pause" class="btn btn-primary">Pause it.</button>
-    <button id="restart" class="btn btn-primary">Restart it.</button>
-    <button id="reset" class="btn btn-primary">Reset it.</button>
+        <p>Have you ever been on a freeway, and suddenly traffic comes to a stop for no visible reason? Or have you ever been stuck in bumper-to-bumper congestion, and suddenly traffic clears up? If so, then you've experienced a <strong>traffic wave</strong>.</p>
 
-  </div>
+        <p>A traffic wave is a block of slow-moving vehicles on a freeway that travels backwards over time. If a road is crowded with vehicles, then just one vehicle slowing down a little bit can set off a traffic wave. </p>
 
-  <div id="roadExplanation" class="col-lg-7">
-    Green bars show acceleration, how hard a driver is hitting the gas. <br> Red bars show deceleration, how hard a driver is hitting the brakes. <br> Blue cars have lower speeds.
-  </div>
+        <p>Click the blue button to slow down a car, and watch the traffic wave slowly form.</p>
 
-  <div id="main"></div>
+        <button id="pause" class="btn btn-block btn-warning">Pause.</button>
+        <button id="reset" class="btn btn-block btn-danger">Reset.</button>
+      </div>
+      <div id = "roadCircle" class="col-lg-8">
+        <div id="main" ></div>
+      </div>
+    </div>
+      
+    <div id="chartExplanation" class="col-lg-7">
+        <h3>What causes traffic waves?</h3>
+        <p>They happen because of two facts about driving: </p>
+        <ol>
+          <li>Cars take longer to speed up than to slow down, so if you brake suddenly then it will take you a while to reach your original speed.</li>
+          <li>People have <em>reaction times</em>...if the car in front of you slows down all of a sudden, you don't slow down until a couple seconds later. And the more time you lose reacting, the harder you have to brake to keep a safe distance.</li>
+        </ol>
+
+        <p>Therefore, on a crowded road, if one car brakes, then the car behind it has to brake harder, and the car behind that one has to brake even harder, and so on.</p>
+        <p> Drag the slider below to see how one car slowing down (the grey one) makes other cars slow down even more.</p>
+      
+    </div>
+
+    <div class="chart">
+      <div id="velocity"></div>
+      <div id="road"></div>
+      <div id="slider1"></div>
+    </div style="">
+
 
   </div>
 
