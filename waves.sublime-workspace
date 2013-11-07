@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"change",
+				"changeDots"
+			],
+			[
+				"tim",
+				"timeScale"
+			],
+			[
+				"c",
+				"c"
+			],
+			[
+				"carAr",
+				"carArcInner"
+			],
+			[
+				"rad",
+				"radius"
+			],
+			[
 				"on",
 				"onclick	Attr"
 			],
@@ -27,11 +47,35 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "scripts/chart.js",
+			"settings":
+			{
+				"buffer_size": 6256,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "todo.txt",
+			"settings":
+			{
+				"buffer_size": 790,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chart.html",
+			"settings":
+			{
+				"buffer_size": 842,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 117.0,
 		"selected_items":
 		[
 			[
@@ -51,7 +95,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 449.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -71,9 +115,13 @@
 	},
 	"file_history":
 	[
+		"/home/lewis/Documents/github/waves/libraries/slider.js",
+		"/home/lewis/Documents/github/waves/styles/slider.css",
+		"/home/lewis/Documents/github/waves/chart.html",
 		"/home/lewis/Documents/github/waves/scripts/sim.js",
-		"/home/lewis/Documents/github/waves/index.html",
+		"/home/lewis/Documents/github/waves/scripts/chart.js",
 		"/home/lewis/Documents/github/waves/todo.txt",
+		"/home/lewis/Documents/github/waves/index.html",
 		"/home/lewis/Documents/github/waves/text.txt",
 		"/home/lewis/Documents/asdf/src/de/trafficsimulation/IDMCar.java",
 		"/home/lewis/Documents/asdf/src/de/trafficsimulation/IDM.java",
@@ -191,6 +239,53 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"10",
+			"transform",
+			"changed",
+			"changedots",
+			"newWhich",
+			"numpatches",
+			"road",
+			"styleslider",
+			"style",
+			"city",
+			"20",
+			"choices",
+			"c",
+			"d",
+			"cars",
+			"vo",
+			"map",
+			"close",
+			"gap",
+			"index",
+			"math.pow",
+			"update",
+			"arcinner",
+			"90",
+			"40",
+			"80",
+			"65",
+			"55",
+			"radius",
+			"color",
+			"crimson",
+			"DDE76A",
+			"8F9CFC",
+			"redraw",
+			"gap",
+			"this.gap",
+			"arc",
+			"redraw",
+			"arc",
+			"arc =",
+			"mdpt",
+			"torads",
+			"end",
+			"start",
+			"end",
+			"dend",
+			"update",
 			"slowclick",
 			"linear",
 			"fill",
@@ -271,54 +366,7 @@
 			"acc",
 			"updateloc",
 			"getvel",
-			"vel",
-			"text",
-			"fill",
-			"maxVel",
-			"this.vel",
-			"this.loc =",
-			"900",
-			"getvel",
-			"format",
-			"stroke",
-			"black",
-			"white",
-			"cars",
-			"updateloc",
-			"1000",
-			"update",
-			"cartize",
-			"4",
-			"none",
-			"	\n",
-			"Hours",
-			"month",
-			"unemployment",
-			"var",
-			"_barwidth",
-			"href",
-			"byMonthGroup",
-			"d3.time.month",
-			"monthlymoveg",
-			"movechart",
-			"volumeby",
-			"group",
-			"chartgroup",
-			"facts",
-			"render",
-			"movechart",
-			"area",
-			"fill",
-			"area",
-			"line",
-			"servicesd",
-			"services",
-			"Element",
-			"controlle",
-			"controller",
-			"iAttrsa",
-			"iAttrs",
-			"iElm"
+			"vel"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -326,6 +374,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"g-car",
+			"d",
+			"time",
 			"cars",
 			"vel",
 			"gData",
@@ -342,13 +393,95 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
-			]
-		},
-		{
-			"sheets":
-			[
+				{
+					"buffer": 0,
+					"file": "scripts/chart.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6256,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								418,
+								418
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "todo.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 790,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								103,
+								103
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "chart.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 842,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								412,
+								412
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -369,18 +502,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -406,19 +532,35 @@
 		"selected_items":
 		[
 			[
-				"sim.js",
-				"scripts/sim.js"
+				"chart.html",
+				"chart.html"
 			],
 			[
 				"todo",
 				"todo.txt"
 			],
 			[
-				"index.",
-				"index.html"
+				"chart.js",
+				"scripts/chart.js"
+			],
+			[
+				"sim.js",
+				"scripts/sim.js"
 			],
 			[
 				"index",
+				"index.html"
+			],
+			[
+				"sim.",
+				"scripts/sim.js"
+			],
+			[
+				"sim",
+				"scripts/sim.js"
+			],
+			[
+				"index.",
 				"index.html"
 			],
 			[
@@ -651,7 +793,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 244.0,
+	"side_bar_width": 191.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

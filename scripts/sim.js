@@ -1,21 +1,65 @@
+(function(){
+
+    function Slow(){
+      cars[0].slowClick();
+    }
+
+    function Pause(){
+     paused = true;
+    }
+
+    function Restart(){
+      if(paused){
+       paused = false;
+       d3.timer(function(elapsed) {
+         t = (elapsed - last)/dur * tPerm % .5;
+         last = elapsed;
+         redraw();
+         return paused;
+       });
+      }
+    }
+
+    function Set(){
+
+    	cars.forEach(function(d,i){
+	    		var x = Math.round(i/numCars * numPatches); 
+		    	d.x = x;
+		    	d.v = startV;
+		    	d.a = 0;
+		    	d.gap = numPatches / numCars;
+		    	d.slow = false;
+    	})
+    }
+
+    $("#slow").on("click",function(){
+    	Slow();
+    })
+
+    $("#pause").on("click",Pause)
+    $("#restart").on("click",Restart)
+    $("#reset").on("click",Set)
+
+
 //===============PARAMETERS===================
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
-    width = 800 - margin.left - margin.right,
-    height = 800 - margin.top - margin.bottom,
-    radius = (width-200)/2,
+    width = 700 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom,
+    radius = (width-150)/2,
     center = {x: width/2, y: height/2},
     durPerm = 55,
     dur = 55;
 
-var numCars = 35,
+var numCars = 30,
 		tPerm = 0.5,
     t = .5,
     numPatches = 1000,
     vo = 20,
+    startV = 11.2,
     // maxV = 30, 
     sMin = 2,
     L = 10,
-    T = 2,
+    T = 1.8,
     acc = 0.5,
     dec = 3;
 
@@ -24,8 +68,8 @@ var numCars = 35,
 	var format = d3.format(",.3r");
 
 	var color = d3.scale.linear()
-	    .domain([0,vo*3/5]) //domain of input data 1 to 38
-      .range(["#49a3df", "#ecf0f1"])  //the color range
+	    .domain([0,vo*0.5]) //domain of input data 1 to 38
+      .range(["#2980b9", "#ecf0f1"])  //the color range
 	    .interpolate(d3.interpolateRgb);
 
   var colorAcc = d3.scale.pow().exponent(0.5)
@@ -38,27 +82,27 @@ var numCars = 35,
   var y = d3.scale.linear()
   		.domain([-5,1.5])
   		.range([0,radius + 135])
-  		.clamp(true);
+  		// .clamp(true);
 
   var offset = L;    
-  // var e = -2*L
+
+  var interiorGap = 95;
+
   var arc = d3.svg.arc()
       .innerRadius(function(d){
-      	if(0 > d.a) return y(d.a) - 85;
-      	// var u = d3.min([0, d.a]); 
+      	if(0 > d.a) return y(d.a) - interiorGap;
       	return y(0);
       })
       .outerRadius(function(d){
       	if(d.a > 0) return y(d.a);
-      	// var u = d3.max([0, d.a]); 
-      	return y(0) - 85;
+      	return y(0) - interiorGap;
       })
       .startAngle(function(d){
       	// return 0;
-      	return (-0.5*(d.gap + offset)/numPatches + .005) * toRads;
+      	return (-0.5*(d.gap + offset)/numPatches*0.8 + .005) * toRads;
       })
       .endAngle(function(d){
-      	return (0.5*(d.gap - offset)/numPatches - 0.005) * toRads;
+      	return (0.5*(d.gap - offset)/numPatches*0.8 - 0.005) * toRads;
       });
 
 
@@ -76,6 +120,8 @@ var numCars = 35,
 //=============DRAW SVG AND ROAD===============
 
 	var sticker = d3.sticker("#car");
+
+	var stickerCone = d3.sticker('#cone');
 
 	var svg = d3.select("#main")
 		.append("svg")
@@ -103,7 +149,6 @@ var numCars = 35,
 			.on('mouseout', function(){
 				dur = durPerm
 		});
-
 
 	//=============SET UP ARRAYS===============
 
@@ -153,8 +198,6 @@ var numCars = 35,
 			d.slowClick();
 		});
 
-
-
 	var carArc = car.append('path')
 		.attr({
 			"d": arc,
@@ -164,6 +207,8 @@ var numCars = 35,
 			// stroke: "#666"
 		});
 
+
+
 //=============GET IT GOING===============
 
 // setInterval(redraw, dur);
@@ -172,12 +217,13 @@ var last = 0;
 var numLoop = 0;
 
 d3.timer(function(elapsed) {
-  t = (elapsed - last)/dur * tPerm;
+  t = (elapsed - last)/dur * tPerm % .5;
   // T = 10*t;
   numLoop++
-  if(numLoop%25 ==0) console.log(t)
   last = elapsed;
   redraw();
+
+  if(numLoop == 1000) console.log(cars[0].v)
   return paused;
 });
 
@@ -187,7 +233,6 @@ d3.timer(function(elapsed) {
 
 
 function redraw(){
-
 	
 	cars.forEach(function(d){
 		d.choose();
@@ -220,7 +265,7 @@ function Car(xo, index){
 
 	this.index = index;
 	this.x = xo;
-	this.v = 10;
+	this.v = startV;
 	this.a = 0;
 	this.gap = numPatches / numCars;
 
@@ -282,3 +327,4 @@ function Car(xo, index){
 
 }
 
+})()

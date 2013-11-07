@@ -1,20 +1,23 @@
 SHORT TERM
+add a legend
+add flatui styles
 
-do all kinds of renaming for the classes and functions and such
-make the 85 you subtract out a variable of its own
+
+
+MED TERM
 redraw the car itself to be correct rather than transforming it
-
-put invisible arcs over the cars
-create a ghz line chart like in wolfram alpha
+make the 85 you subtract out a variable of its own
 make the color change when you click on an element
-can you substitute a single letter for "this"?
-make a function that draws the cars and move it to the bottom to make the code cleaner
-create a reset button
 
-ARCS
-have every car calculate its own start and end
+create a reset button
+fix the breaking
+tooltips
 
 
 LONG TERM
+combine the two visualizations into one sheet
+use fisheye effect on the cars
+add a slider to control the reaction times
+incorporate the lead car
 try the ghz formula
 you can do the arc calculation easier by doing a sort of gap before and gap after and then adding them

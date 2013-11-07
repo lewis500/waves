@@ -1,51 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
 
 <!-- ============== CSS ===================== -->
     <title>Simulation</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/slider.css">
 
-  </head>
+
+</head>
 
 <!-- ============== BODY =================== -->
 
-  <body>
+<body>
 
-  <script>
+  <div class="container">
 
-    function Slow(){
-      console.log("LOG:","fired");
-      cars[0].slowClick();
-    }
+  <h1>Traffic Waves</h1>
 
-    function Pause(){
-     paused = true;
-    }
-
-    function Restart(){
-      if(paused){
-       paused = false;
-       d3.timer(function(elapsed) {
-         t = (elapsed - last)/dur * tPerm;
-         last = elapsed;
-         redraw();
-         return paused;
-       });
-      }
-
-    }
+  <div id="chartExplanation" class="col-lg-7">
+  
+      <p>Traffic waves are...</p>
+      <p>They happen because of two facts about driving: <br> First, cars take longer to speed up than to slow down, so if you brake suddenly then it will take you a while to reach your original speed. Second, people have <em>reaction times</em>...if the car in front of you slows down all of a sudden, you don't slow down until a couple seconds later. And the more time you lose reacting, the harder you have to brake to keep a safe distance. </p>
+      <p>Therefore, a crowded road has very unstable traffic. If one car brakes, then the car behind it has to brake harder, and the car behind that one has to brake even harder, and so on. Drag the slider below to see how one car slowing down (the grey one) makes other cars slow down even more.</p>
+    
+  </div>
+    
+  <div class="chart" style="margin-bottom: 50px">
+    <div id="velocity"></div>
+    <div id="road"></div>
+    <div id="slider1"></div>
+  </div>
 
 
+  <div class ="col-lg-6">
+    <button id="slow" class="btn btn-primary">Perturb it..</button>
+    <button id="pause" class="btn btn-primary">Pause it.</button>
+    <button id="restart" class="btn btn-primary">Restart it.</button>
+    <button id="reset" class="btn btn-primary">Reset it.</button>
 
-  </script>
+  </div>
 
-  <button onclick="Slow()">Perturb it..</button>
-  <button onclick="Pause()">Pause it.</button>
-  <button onclick="Restart()">Restart it.</button>
+  <div id="roadExplanation" class="col-lg-7">
+    Green bars show acceleration, how hard a driver is hitting the gas. <br> Red bars show deceleration, how hard a driver is hitting the brakes. <br> Blue cars have lower speeds.
+  </div>
 
   <div id="main"></div>
+
+  </div>
 
   <div id="sticker1" class="sticker" style="opacity: 0;">
     <svg width="60.78429"  height="26.852531" viewBox="0 0 60.78429 26.85253">
@@ -66,19 +70,20 @@
     </svg>
   </div>
 
-
-
   </body>
 
 <!-- ============== LIBRARIES =================== -->
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="libraries/underscore.min.js"></script>    
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="libraries/sticker.js"></script>    
+    <script src="libraries/slider.js"></script>    
 
 
 <!-- ============== SCRIPTS =================== -->
 
     <script src="scripts/sim.js"></script>
+    <script src="scripts/chart.js"></script>
+
 
 </html>
