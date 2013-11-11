@@ -5,8 +5,8 @@
 <!-- ============== CSS ===================== -->
     <title>Simulation</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/slider.css">
 
 
@@ -18,35 +18,31 @@
 
 
   <div class="container">
-  <div class="jumbotron">
-    <h1>Traffic Waves</h1>
-  </div>
 
+    <div class="jumbotron">
+      <h1>Traffic Waves</h1>
+    </div>
 
-<!--     <div id="chartExplanation" class="col-lg-7">
-    
-
-      
-    </div> -->
     <div class="clearfix"></div>
-    <div class= "row">
-      <div class ="col-lg-3" style="margin-top: 5%">
 
-        <p>Have you ever been on a freeway, and suddenly traffic comes to a stop for no visible reason? Or have you ever been stuck in bumper-to-bumper congestion, and suddenly traffic clears up? If so, then you've experienced a <strong>traffic wave</strong>.</p>
+    <div style="margin-top: 5%">
 
-        <p>A traffic wave is a block of slow-moving vehicles on a freeway that travels backwards over time. If a road is crowded with vehicles, then just one vehicle slowing down a little bit can set off a traffic wave. </p>
+      <p>Have you ever been on a freeway, and suddenly traffic comes to a stop for no visible reason? Or have you ever been stuck in bumper-to-bumper congestion, and suddenly traffic clears up? If so, then you've experienced a <strong>traffic wave</strong>.</p>
 
-        <p>Click "Hit the Breaks" to slow down a car, and wait until the traffic wave forms.</p>
+      <p>A traffic wave is a block of slow-moving vehicles on a freeway that travels backwards over time. If a road is crowded with vehicles, then just one vehicle slowing down a little bit can set off a traffic wave. </p>
 
-        <button id="pause" class="btn btn-block btn-warning">Pause.</button>
-        <button id="reset" class="btn btn-block btn-danger">Reset.</button>
-      </div>
-      <div id = "roadCircle" class="col-lg-8">
-        <div id="main" ></div>
-      </div>
+      <p>Click "Hit the Breaks" to slow down a car, and wait until the traffic wave forms.</p>
+
+      <button id="pause" class="btn btn-lg">Pause.</button>
+      <button id="reset" class="btn btn-lg btn-danger">Reset.</button>
+    </div>
+    <div class="clearfix"></div>
+
+    <div id = "roadCircle">
+      <div id="main" ></div>
     </div>
       
-    <div id="chartExplanation" class="col-lg-7">
+    <div id="chartExplanation">
         <h3>What causes traffic waves?</h3>
         <p>They happen because of two facts about driving: </p>
         <ol>
@@ -55,15 +51,17 @@
         </ol>
 
         <p>Therefore, on a crowded road, if one car brakes, then the car behind it has to brake harder, and the car behind that one has to brake even harder, and so on.</p>
-        <p> Drag the slider below to see how one car slowing down (the grey one) makes other cars slow down even more.</p>
       
     </div>
+    <div class="clearfix"></div>
 
     <div class="chart">
       <div id="velocity"></div>
       <div id="road"></div>
-      <div id="slider1"></div>
+      <div style="margin-left: 40px; margin-bottom:5px">Time Slider</div>
+      <div id="slider1" style="margin-bottom: 40px"></div>
     </div style="">
+    <p> Drag the slider above to see how one car slowing down (the grey one) makes other cars slow down even more.</p>
 
 
   </div>

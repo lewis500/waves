@@ -1,5 +1,5 @@
 SHORT TERM
-add label to slider
-make the color scheme coherent between the buttons and the vis
 spruce up the tooltip
-make the buttons a certain size
+
+
+make it so the car actually decelerates when you slowclick it

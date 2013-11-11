@@ -151,7 +151,7 @@ function Chart(measure){
       .attr("y", 10)
       // .attr("dy", ".71em")
       // .attr("x", "15px")
-      .attr("dx","3em")
+      .attr("dx","4em")
       .style("text-anchor", "end")
       .text(labels[measure]);
 
@@ -239,7 +239,7 @@ function Road(){
     });
 
 
-    var sliderCall = d3.slider().on("slide", redraw).axis(true)
+    var sliderCall = d3.slider().on("slide", redraw).axis( d3.svg.axis().ticks(10) );
 
     d3.select('#slider1')
         .style({

@@ -48,10 +48,34 @@
 	"buffers":
 	[
 		{
+			"file": "scripts/sim.js",
+			"settings":
+			{
+				"buffer_size": 10147,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 5046,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "todo.txt",
 			"settings":
 			{
-				"buffer_size": 244,
+				"buffer_size": 148,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "styles/style.css",
+			"settings":
+			{
+				"buffer_size": 2721,
 				"line_ending": "Unix"
 			}
 		}
@@ -59,16 +83,20 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 117.0,
+		"height": 348.0,
 		"selected_items":
 		[
 			[
-				"jade",
-				"Set Syntax: Jade"
-			],
-			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"color",
+				"Color picker"
+			],
+			[
+				"jade",
+				"Set Syntax: Jade"
 			],
 			[
 				"Package Control: li",
@@ -99,12 +127,13 @@
 	},
 	"file_history":
 	[
-		"/home/lewis/Documents/github/waves/scripts/sim.js",
-		"/home/lewis/Documents/github/waves/index.html",
-		"/home/lewis/Documents/github/waves/scripts/chart.js",
 		"/home/lewis/Documents/github/waves/styles/style.css",
-		"/home/lewis/Documents/github/waves/chart.html",
+		"/home/lewis/Documents/github/waves/scripts/chart.js",
+		"/home/lewis/Documents/github/waves/index.html",
+		"/home/lewis/Documents/github/waves/scripts/sim.js",
 		"/home/lewis/Documents/github/waves/todo.txt",
+		"/home/lewis/Documents/github/waves/styles/car.svg",
+		"/home/lewis/Documents/github/waves/chart.html",
 		"/home/lewis/Documents/github/waves/libraries/slider.js",
 		"/home/lewis/Documents/github/waves/styles/slider.css",
 		"/home/lewis/Documents/github/waves/text.txt",
@@ -112,7 +141,6 @@
 		"/home/lewis/Documents/asdf/src/de/trafficsimulation/IDM.java",
 		"/home/lewis/Documents/phantom/de/trafficsimulation/IDMCar.class",
 		"/home/lewis/Documents/github/waves/libraries/sticker.js",
-		"/home/lewis/Documents/github/waves/styles/car.svg",
 		"/home/lewis/Documents/github/waves/waves.sublime-project",
 		"/home/lewis/Documents/github/waves/load.html",
 		"/home/lewis/Documents/github/freddie/scripts/directives/line.js",
@@ -223,6 +251,40 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"this.slow",
+			"slowclick",
+			"click",
+			"top",
+			"dur",
+			"mouseover",
+			"pointer",
+			"tootlip",
+			"div",
+			"tootlip",
+			"div",
+			"gcar",
+			"inner",
+			"scale(",
+			"scale",
+			"scale(",
+			"x =",
+			"scale",
+			"width",
+			"slowCar",
+			"legend",
+			"sticker",
+			"legend",
+			"dur =",
+			"999",
+			"interpolate",
+			"red",
+			"color",
+			"20c",
+			"color",
+			"i*4",
+			"fill",
+			"color",
+			"sticker",
 			"click",
 			"em",
 			"expon",
@@ -316,41 +378,7 @@
 			"1000",
 			"this.v =",
 			"acc",
-			"scale",
-			"*3",
-			"* 3",
-			"choose",
-			"dec",
-			"slowclick",
-			"n.",
-			"car",
-			"cars =",
-			"loc",
-			"40",
-			"scale",
-			"maxVel",
-			"transition",
-			"carlength",
-			"transform",
-			"transition",
-			"translate",
-			"d3.timer",
-			"dur",
-			"moves",
-			"this.slow",
-			"dur",
-			"numpatches",
-			"scale",
-			"width",
-			"redraw",
-			"d3.timer",
-			"transition",
-			"dur",
-			"transform",
-			"duration",
-			"dur =",
-			"dur",
-			"getvel"
+			"scale"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -358,6 +386,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"tooltip",
+			"10",
+			"i",
 			"800",
 			"g-car",
 			"d",
@@ -378,29 +409,149 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "todo.txt",
+					"file": "scripts/sim.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 244,
+						"buffer_size": 10147,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								139,
-								139
+								1655,
+								1655
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 964.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5046,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								485,
+								485
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "todo.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 148,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								148,
+								148
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "styles/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2721,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								177,
+								177
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "scripts/sim.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								79,
+								79
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -428,11 +579,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -458,39 +616,59 @@
 		"selected_items":
 		[
 			[
-				"sim.js",
-				"scripts/sim.js"
-			],
-			[
-				"index.html",
-				"index.html"
+				"style.css",
+				"styles/style.css"
 			],
 			[
 				"todo",
 				"todo.txt"
 			],
 			[
+				"index.html",
+				"index.html"
+			],
+			[
+				"style",
+				"styles/style.css"
+			],
+			[
+				"sim.js",
+				"scripts/sim.js"
+			],
+			[
+				"chart",
+				"scripts/chart.js"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
 				"chart.js",
 				"scripts/chart.js"
 			],
 			[
-				"chart",
-				"chart.html"
-			],
-			[
-				"style.css",
-				"styles/style.css"
-			],
-			[
-				"index.",
+				"inde",
 				"index.html"
+			],
+			[
+				"car.svg",
+				"styles/car.svg"
 			],
 			[
 				"chart.html",
 				"chart.html"
 			],
 			[
-				"index",
+				"styles.css",
+				"styles/style.css"
+			],
+			[
+				".svg",
+				"styles/car.svg"
+			],
+			[
+				"index.",
 				"index.html"
 			],
 			[
@@ -508,10 +686,6 @@
 			[
 				"styles",
 				"styles/style.css"
-			],
-			[
-				"inde",
-				"index.html"
 			],
 			[
 				"maincon",

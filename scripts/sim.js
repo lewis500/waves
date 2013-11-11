@@ -33,7 +33,7 @@
     		$(this).html("Play");
     	};
   		
-  		$(this).toggleClass("btn-warning");
+  		// $(this).toggleClass("btn-warning");
   		$(this).toggleClass("btn-success");
 
     });
@@ -76,11 +76,6 @@ var numCars = 30,
       .range(["#2980b9", "#ecf0f1"])  //the color range
 	    .interpolate(d3.interpolateHcl);
 
-  // var colorAcc = d3.scale.linear()
-  // 		.domain([-3,3])
-  //     .range(["#e74c3c", "#2ecc71"])  //the color range
-  //     .interpolate(d3.interpolateRgb);
-
   var posColorAcc = d3.scale.pow().exponent(0.4)
   		.domain([0,1])
       .range(["#ddd", "#2ecc71"])  //the color range
@@ -99,12 +94,18 @@ var numCars = 30,
       
   var y = d3.scale.linear()
   		.domain([-7,1.5])
-  		.range([0,radius + 102.5])
+  		.range([0,radius + 120])
   		// .clamp(true);
 
   var offset = 18;    
 
-  var interiorGap = 80;
+  var interiorGap = 110;
+
+  var roadMaker = d3.svg.arc()
+  	.innerRadius(radius-50)
+  	.outerRadius(radius+50)
+  	.startAngle(0)
+  	.endAngle(2*Math.PI);
 
   var arc = d3.svg.arc()
       .innerRadius(function(d){
@@ -128,12 +129,12 @@ var numCars = 30,
       .innerRadius(radius - 25)
       .outerRadius(radius + 25)
       .startAngle(function(d){
-      	// return 0;
       	return (-0.5*(d.gap + offset)/numPatches*0.8 + 0.002) * toRads;
       })
       .endAngle(function(d){
       	return (0.5*(d.gap - offset)/numPatches*0.8 - 0.002) * toRads;
       });
+
 
 //=============DRAW SVG AND ROAD===============
 
@@ -149,17 +150,15 @@ var numCars = 30,
 	var road = svg.append("g")
 			.attr("class","road");
 
-	road.append('circle')
+
+	road.append('path')
 			.attr({
-				r: radius,
-				cx: width/2,
-				cy: height/2,
-				fill: "none",
-				stroke: "#293038",
-				"stroke-width": "75px"
+				d: roadMaker,
+				fill: "#293038",
+				transform: "translate(" + center.x + "," + center.y + ")"
 			});
 
-	var slowScale = d3.scale.linear().domain([0,75/2]).range([6,1]).clamp(true)
+	var slowScale = d3.scale.linear().domain([0,50]).range([6,1]).clamp(true)
 
 	road.on('mousemove', function(){
 				var xi = d3.mouse(this)[0] - center.x ;
@@ -249,7 +248,6 @@ var numCars = 30,
       .text("fast");
 
 
-
 	//=============SET UP ARRAYS===============
 
 	var	cars = d3.range(numCars).map(function(d,i){
@@ -285,8 +283,8 @@ var numCars = 30,
 			        .duration(200)      
 			        .style("opacity", .8);      
 			    tooltip .html(
-			    	"velocity: " + 	format(d.v) + "<br/>" +   
-			    	"acceleration: " + format(d.a)
+			    	"velocity: " + 	format(d.v) + " m/s <br/>" +   
+			    	"acceleration: " + format(d.a) + " m/s^2"
 			    	)  
 			        .style("left", (d3.event.pageX) + "px")     
 			        .style("top", (d3.event.pageY - 28) + "px");    
@@ -424,7 +422,8 @@ function Car(xo, index){
 	}
 
 	this.slowClick = function(){
-		this.slow =  true;
+		this.slow = d3.range(10);
+		// this.slow =  true;
 	}
 
 	this.choose = function(){
@@ -437,12 +436,15 @@ function Car(xo, index){
 			ss = sMin + d3.max([si, 0]),
 			a = acc*(1 -  Math.pow((v/vo),4) - Math.pow((ss / s),2) );
 	
-		if(this.slow) this.v = this.v*0.75;
+		// if(this.slow) this.v = this.v*0.75;
 
 		this.a = a;
 
-		// this.pedals.unshift(a);
-		this.slow = false;
+		if(this.slow.length > 0) {
+			this.a = -1;
+			// this.v = 
+			this.slow.pop();
+		}
 
 	};
 
