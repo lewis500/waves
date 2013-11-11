@@ -1,7 +1,7 @@
 (function(){
 
     function Slow(){
-      cars[0].slowClick();
+      d3.selectAll(".highlighted").data()[0].slowClick();
     }
 
     function Set(){
@@ -47,10 +47,8 @@ var margin = {top: 0, right: 20, bottom: 0, left: 20},
     height = 700 - margin.top - margin.bottom,
     radius = (width-150)/2,
     center = {x: width/2, y: height/2},
-    durPerm = 55,
-    dur = 55;
-
-	console.log(radius)
+    durPerm = 45,
+    dur = 45;
 
 var numCars = 30,
 		tPerm = 0.5,
@@ -60,24 +58,42 @@ var numCars = 30,
     startV = 11.2,
     // maxV = 30, 
     sMin = 2,
-    L = 10,
-    T = 1.8,
+    L = 14,
+    T = 1.9,
     acc = 0.5,
     dec = 3;
 
 //=============DRAWING HELPERS===============
 
-	var format = d3.format(",.3r");
+	var format = d3.format(",.2r");
 
-	var color = d3.scale.linear()
-	    .domain([0,vo*0.5]) //domain of input data 1 to 38
+	var tooltip = d3.select("body").append("div")   
+	    .attr("class", "tooltip")               
+	    .style("opacity", 0);
+
+	var color = d3.scale.pow().exponent(0.8)
+	    .domain([0,vo*0.7]) //domain of input data 1 to 38
       .range(["#2980b9", "#ecf0f1"])  //the color range
-	    .interpolate(d3.interpolateRgb);
+	    .interpolate(d3.interpolateHcl);
 
-  var colorAcc = d3.scale.pow().exponent(0.5)
-  		.domain([-3,1])
-      .range(["#e74c3c", "#2ecc71"])  //the color range
-      .interpolate(d3.interpolateHcl);
+  // var colorAcc = d3.scale.linear()
+  // 		.domain([-3,3])
+  //     .range(["#e74c3c", "#2ecc71"])  //the color range
+  //     .interpolate(d3.interpolateRgb);
+
+  var posColorAcc = d3.scale.pow().exponent(0.4)
+  		.domain([0,1])
+      .range(["#ddd", "#2ecc71"])  //the color range
+      .interpolate(d3.interpolateRgb);
+
+  var negColorAcc = d3.scale.pow().exponent(0.4)
+  		.domain([-3,0])
+      .range(["#e74c3c","#ddd"])  //the color range
+      .interpolate(d3.interpolateRgb);
+
+  var colorAcc = function(val){
+  	return (val > 0) ?  posColorAcc(val) : negColorAcc(val);
+  }
 
   var toRads = 2*Math.PI;
       
@@ -86,7 +102,7 @@ var numCars = 30,
   		.range([0,radius + 102.5])
   		// .clamp(true);
 
-  var offset = L;    
+  var offset = 18;    
 
   var interiorGap = 80;
 
@@ -123,8 +139,6 @@ var numCars = 30,
 
 	var sticker = d3.sticker("#car");
 
-	var stickerCone = d3.sticker('#cone');
-
 	var svg = d3.select("#main")
 		.append("svg")
 	    .attr("width", width + margin.left + margin.right)
@@ -145,8 +159,13 @@ var numCars = 30,
 				"stroke-width": "75px"
 			});
 
-	road.on('mouseover', function(){
-				dur = durPerm * 4
+	var slowScale = d3.scale.linear().domain([0,75/2]).range([6,1]).clamp(true)
+
+	road.on('mousemove', function(){
+				var xi = d3.mouse(this)[0] - center.x ;
+				var yi = d3.mouse(this)[1] - center.y ;
+				var s = Math.pow(Math.pow(xi,2) + Math.pow(yi,2),0.5) - radius;
+				dur = durPerm * slowScale(Math.abs(s))
 			})
 			.on('mouseout', function(){
 				dur = durPerm
@@ -158,13 +177,78 @@ var numCars = 30,
 	    .attr("height", 200)
 	  .append("xhtml:div")
 	  	// .attr("class","col-lg-5")
-	    .html('<button id="slow" class="btn  btn-info btn-lg">Hit the brakes.</button>'
+	    .html('<button id="slow" class="btn btn-lg">Hit the brakes.</button>'
 	    	+ '<p>(start some traffic waves)</p>');
 			 
 
 	$("#slow").on("click",function(){
 		Slow();
 	})
+
+	//=============DRAW LEGEND===============
+// ["#e74c3c", "#2ecc71"]
+	var legendData = [
+		{name: "braking", color: "#e74c3c", type: "rect"},
+		{name: "speeding up", color: "#2ecc71", type: "rect"}
+	]
+
+	var legend = svg.selectAll(".legend")
+	    .data(legendData)
+	  .enter().append("g")
+	    .attr("class", "legend")
+	    .attr("transform", function(d, i) { return "translate(" +width + "," + i * 25 + ")"; });
+
+	legend.append("rect")
+	    .attr("x", - 18)
+	    .attr("width", 18)
+	    .attr("stroke","black")
+	    .attr("height", 18)
+	    .style("fill", function(d){ return d.color; });
+
+	legend.append("text")
+	    .attr("x", - 24)
+	    .attr("y", 9)
+	    .attr("dy", ".35em")
+	    .style("text-anchor", "end")
+	    .text(function(d) { return d.name; });
+
+	var carOne = svg.append("g")
+		.attr("class","legend")
+		.attr("transform", "translate(" + (width - 42) + "," + 50 + ")")
+
+		carOne.append("g").call(sticker)
+		.attr({
+				transform: "scale(0.7)",
+				fill: "#2980b9",
+				stroke: 'black'
+			});
+
+	carOne.append("text")
+	    .attr("x", -6)
+	    .attr("y", 9)
+	    .attr("dy", ".35em")
+	    .style("text-anchor", "end")
+	    .text("slow");
+
+  var carTwo = svg.append("g")
+  	.attr("class","legend")
+  	.attr("transform", "translate(" + (width - 42) + "," + 75+ ")")
+
+  	carTwo.append("g").call(sticker)
+  	.attr({
+  			transform: "scale(0.7)",
+  			fill: "#ecf0f1",
+  			stroke: 'black'
+  		});
+
+  carTwo.append("text")
+      .attr("x", -6)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text("fast");
+
+
 
 	//=============SET UP ARRAYS===============
 
@@ -184,7 +268,7 @@ var numCars = 30,
 			.enter()
 		.append('g')
 			.attr({
-				class: function(d){
+				class: function(d,i){
 					return "car " + d.index.toString();
 				},
 				transform: function(d){
@@ -192,29 +276,47 @@ var numCars = 30,
 				}
 			})
 			.on("click", function(d){
-				d.slowClick();
+				d3.select(".highlighted").classed("highlighted", false)
+				d3.select(this).select(".car-arc-inner")
+					.classed("highlighted", true);
+			})
+			.on("mousemove", function(d) {      
+			    tooltip.transition()        
+			        .duration(200)      
+			        .style("opacity", .8);      
+			    tooltip .html(
+			    	"velocity: " + 	format(d.v) + "<br/>" +   
+			    	"acceleration: " + format(d.a)
+			    	)  
+			        .style("left", (d3.event.pageX) + "px")     
+			        .style("top", (d3.event.pageY - 28) + "px");    
+			    })                  
+			.on("mouseout", function(d) {       
+			    tooltip.transition()        
+			        .duration(500)      
+			        .style("opacity", 0);   
 			});
+
 
 	var carArcInner = car.append('path')
 		.attr({
 			"d": arcInner,
-			class: "car-arc-inner",
+			class: function(d,i){
+				var extra = (i == 0) ? " highlighted" : "";
+				return "car-arc-inner" + extra;
+			},
 			opacity: 0.05,
 			fill: "#ecf0f1",
-			// fill: function(d,i){ return colorAcc(d.a); },
-			// stroke: "#666"
 		});
+
+
 
 	car.append('g')
 		.call(sticker)
 			.attr({
 				class: "g-sticker",
-				transform: "translate(0," + (-radius + 5 ) +") scale(.3, 0.4) rotate(180)",
+				transform: "translate(0," + (-radius + 5 ) +") scale(.4, 0.4) rotate(180)",
 				fill: function(d,i){ return color(d.v); },
-				// stroke: 'white'
-			})
-			.on("click", function(d){
-				d.slowClick();
 			});
 
 
@@ -222,12 +324,9 @@ var numCars = 30,
 		.attr({
 			"d": arc,
 			class: "car-arc",
-			opacity: 0.5,
+			// opacity: 0.75,
 			fill: function(d,i){ return colorAcc(d.a); },
 			// stroke: "#666"
-		})
-		.on("click", function(d){
-			d.slowClick();
 		});
 
 

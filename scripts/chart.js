@@ -1,9 +1,11 @@
 (function(){
 
-  var numCars = 8,
-    t = .5,
-    numPatches = 500,
-    timeScale = 100;
+var sticker = d3.sticker("#car");
+
+var numCars = 8,
+  t = .5,
+  numPatches = 500,
+  timeScale = 100;
 
 //parameters of driving
 var vo = 40,
@@ -12,7 +14,7 @@ var vo = 40,
   c = 0.36;
 
 var cars = d3.range(numCars).map(function(d,i){
-    var x = i*85; 
+    var x = i*150; 
     return new Car(x, i);
   });
 
@@ -161,14 +163,14 @@ function Chart(measure){
   gCar.append("path")
       .attr("class", "line")
       .attr("d", function(d) { return line(d.hist); })
-      .style("stroke", function(d,i) { return color(i); });
+      .style("stroke", function(d,i) { return d3.rgb(color(i)).brighter(0.5); });
 
   var dot = gCar.append("circle")
       .attr({
         r: 5,
         stroke: "#eee",
         class: 'dot',
-        fill: function(d,i){ return color(i); },
+        fill: function(d,i){ return d3.rgb(color(i)).brighter(0.5); },
         transform: function(d) {
           var p = [x(which), y(d.hist[which].v)];
           return "translate(" + p[0] + "," + p[1] + ")";
@@ -194,7 +196,7 @@ function Road(){
       height = 50 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
-      .range([0, width]);
+      .range([margin.left, width]);
 
   x.domain(d3.extent(
       _.flatten(
@@ -221,18 +223,19 @@ function Road(){
         rx: 5
       })
 
-  var car = svg.selectAll('cars')
+  var car = svg.append("g")
+    // .attr("transform","translate(50,0)")
+    .selectAll('cars')
     .data(cars)
       .enter()
-    .append('circle')
+    .append('g')
+    .call(sticker)
     .attr({
       class: "car",
-      r: height * 0.15,
-      stroke: "white",
-      "stroke-width": 2,
-      fill: function(d,i){return color(i);},
-      cy: height/2,
-      cx: function(d){ return x(d.hist[which].x); }
+      fill: function(d,i){return d3.rgb(color(i)).brighter(0.5);},
+      transform: function(d){ 
+        return "translate(" + x(d.hist[which].x) + "," + 10 +") scale(-.5, 0.5) rotate(0)";
+      }
     });
 
 
@@ -248,7 +251,12 @@ function Road(){
 
     function redraw(event, newWhich){
       which = newWhich;
-      car.attr("cx", function(d){ return x(d.hist[which].x); });
+
+
+      car.attr("transform",function(d){ 
+        return "translate(" + x(d.hist[which].x) + "," + 10 +") scale(-.5, 0.5) rotate(0)";
+      });
+
       changeDots(which);
     }
 

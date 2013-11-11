@@ -48,26 +48,10 @@
 	"buffers":
 	[
 		{
-			"file": "scripts/chart.js",
-			"settings":
-			{
-				"buffer_size": 6256,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "todo.txt",
 			"settings":
 			{
-				"buffer_size": 790,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chart.html",
-			"settings":
-			{
-				"buffer_size": 842,
+				"buffer_size": 244,
 				"line_ending": "Unix"
 			}
 		}
@@ -115,20 +99,20 @@
 	},
 	"file_history":
 	[
+		"/home/lewis/Documents/github/waves/scripts/sim.js",
+		"/home/lewis/Documents/github/waves/index.html",
+		"/home/lewis/Documents/github/waves/scripts/chart.js",
+		"/home/lewis/Documents/github/waves/styles/style.css",
+		"/home/lewis/Documents/github/waves/chart.html",
+		"/home/lewis/Documents/github/waves/todo.txt",
 		"/home/lewis/Documents/github/waves/libraries/slider.js",
 		"/home/lewis/Documents/github/waves/styles/slider.css",
-		"/home/lewis/Documents/github/waves/chart.html",
-		"/home/lewis/Documents/github/waves/scripts/sim.js",
-		"/home/lewis/Documents/github/waves/scripts/chart.js",
-		"/home/lewis/Documents/github/waves/todo.txt",
-		"/home/lewis/Documents/github/waves/index.html",
 		"/home/lewis/Documents/github/waves/text.txt",
 		"/home/lewis/Documents/asdf/src/de/trafficsimulation/IDMCar.java",
 		"/home/lewis/Documents/asdf/src/de/trafficsimulation/IDM.java",
 		"/home/lewis/Documents/phantom/de/trafficsimulation/IDMCar.class",
 		"/home/lewis/Documents/github/waves/libraries/sticker.js",
 		"/home/lewis/Documents/github/waves/styles/car.svg",
-		"/home/lewis/Documents/github/waves/styles/style.css",
 		"/home/lewis/Documents/github/waves/waves.sublime-project",
 		"/home/lewis/Documents/github/waves/load.html",
 		"/home/lewis/Documents/github/freddie/scripts/directives/line.js",
@@ -239,6 +223,27 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"click",
+			"em",
+			"expon",
+			"linear",
+			"500",
+			"top",
+			"caused",
+			"linear()",
+			"startV",
+			"start",
+			"cars =",
+			"slow",
+			"margin",
+			"800700",
+			"800",
+			"960",
+			"cont",
+			"san",
+			"attr",
+			"sticker",
+			"slice",
 			"10",
 			"transform",
 			"changed",
@@ -345,28 +350,7 @@
 			"duration",
 			"dur =",
 			"dur",
-			"getvel",
-			"middle",
-			"text",
-			"500",
-			"200",
-			"100",
-			"click",
-			"150",
-			"slow",
-			"20",
-			"#",
-			"slowclick",
-			"patch",
-			"rotate",
-			"slow",
-			"patches",
-			"carsArray",
-			"cars",
-			"acc",
-			"updateloc",
-			"getvel",
-			"vel"
+			"getvel"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -374,6 +358,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"800",
 			"g-car",
 			"d",
 			"time",
@@ -398,83 +383,24 @@
 			[
 				{
 					"buffer": 0,
-					"file": "scripts/chart.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6256,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								418,
-								418
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "todo.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 790,
+						"buffer_size": 244,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								103,
-								103
+								139,
+								139
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "chart.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 842,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								412,
-								412
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -487,7 +413,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 21.0
 	},
 	"input":
 	{
@@ -532,8 +458,12 @@
 		"selected_items":
 		[
 			[
-				"chart.html",
-				"chart.html"
+				"sim.js",
+				"scripts/sim.js"
+			],
+			[
+				"index.html",
+				"index.html"
 			],
 			[
 				"todo",
@@ -544,8 +474,20 @@
 				"scripts/chart.js"
 			],
 			[
-				"sim.js",
-				"scripts/sim.js"
+				"chart",
+				"chart.html"
+			],
+			[
+				"style.css",
+				"styles/style.css"
+			],
+			[
+				"index.",
+				"index.html"
+			],
+			[
+				"chart.html",
+				"chart.html"
 			],
 			[
 				"index",
@@ -558,10 +500,6 @@
 			[
 				"sim",
 				"scripts/sim.js"
-			],
-			[
-				"index.",
-				"index.html"
 			],
 			[
 				"",
@@ -596,20 +534,12 @@
 				"libraries/dc/dc.js"
 			],
 			[
-				"style.css",
-				"styles/styles.css"
-			],
-			[
 				"styles.",
 				"styles/styles.css"
 			],
 			[
 				"main.",
 				"views/main.html"
-			],
-			[
-				"index.html",
-				"index.html"
 			],
 			[
 				"line.js",
@@ -773,7 +703,7 @@
 		[
 			[
 				"",
-				"~/Documents/github/DashDispatch/app/dashDispatch2.sublime-project"
+				"~/Documents/github/bottleneck/bottleneck.sublime-project"
 			]
 		],
 		"width": 380.0

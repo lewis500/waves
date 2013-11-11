@@ -1,18 +1,5 @@
 SHORT TERM
-add a legend
-add tooltips
-combine the pause and restart buttons w/ jquery
-change cricles to cars
-add pause and play buttons
-
-MED TERM
-redraw the car itself to be correct rather than transforming it
-make the color change when you click on an element
-
-tooltips
-
-
-LONG TERM
-use fisheye effect on the cars
-add a slider to control the reaction times
-try the ghz formula
+add label to slider
+make the color scheme coherent between the buttons and the vis
+spruce up the tooltip
+make the buttons a certain size

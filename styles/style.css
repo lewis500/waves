@@ -1,3 +1,12 @@
+    body {
+      font-family: 'Open Sans', sans-serif;
+          }
+
+
+  text{
+      font: 'Open Sans';
+  }
+
     .axis path,
     .axis line {
       fill: none;
@@ -32,10 +41,31 @@
       padding: 40px;
     }
 
+/*
     .legend text{
       fill: white;
+    }*/
+
+
+    div.tooltip {   
+      position: absolute;           
+      text-align: center;           
+      padding: 15px;             
+      background: #999;   
+      border: 0px;    
+      color: white;
+      font-family: "Open Sans";  
+      border-radius: 6px;           
+      pointer-events: none;         
     }
 
+
+  .highlighted{
+    opacity: 0.2;
+    /*fill: coral;*/
+  }
+
+/*
     .tooltip{
       -webkit-transition-delay: 0s;
     -webkit-transition-duration: 0.15s;
@@ -44,10 +74,8 @@
     box-sizing: border-box;
     color: rgb(52, 73, 94);
     display: block;
-    /*font-family: Lato, Helvetica, Arial, sans-serif;*/
     font-size: 14px;
     height: 140px;
-    /*left: -8px;*/
     line-height: 19px;
     margin-top: -3px;
     opacity: 1;
@@ -79,14 +107,12 @@
     box-sizing: border-box;
     color: rgb(52, 73, 94);
     display: block;
-    /*font-family: Lato, Helvetica, Arial, sans-serif;*/
     font-size: 14px;
     height: 9px;
     left: 106.25px;
     line-height: 19px;
     margin-left: -9px;
     position: absolute;
-    /*visibility: visible;*/
     width: 18px;
     }
 
@@ -99,9 +125,7 @@
       box-sizing: border-box;
       color: rgb(255, 255, 255);
       display: inline-block;
-      /*font-family: Lato, Helvetica, Arial, sans-serif;*/
       font-size: 14px;
-      /*height: 96px;*/
       line-height: 18px;
       max-width: 200px;
       padding-bottom: 12px;
@@ -110,10 +134,8 @@
       padding-top: 12px;
       text-align: center;
       text-decoration: none;
-      /*visibility: visible;*/
-      /*width: 135px;*/
     }
-
+*/
 
 .car{
   cursor: pointer;
