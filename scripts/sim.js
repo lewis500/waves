@@ -65,7 +65,7 @@ var numCars = 30,
 
 //=============DRAWING HELPERS===============
 
-	var format = d3.format(",.2r");
+	var format = d3.round(2);
 
 	var tooltip = d3.select("body").append("div")   
 	    .attr("class", "tooltip")               
@@ -187,8 +187,8 @@ var numCars = 30,
 	//=============DRAW LEGEND===============
 // ["#e74c3c", "#2ecc71"]
 	var legendData = [
-		{name: "braking", color: "#e74c3c", type: "rect"},
-		{name: "speeding up", color: "#2ecc71", type: "rect"}
+		{name: "deceleration (braking)", color: "#e74c3c", type: "rect"},
+		{name: "acceleration (speeding up)", color: "#2ecc71", type: "rect"}
 	]
 
 	var legend = svg.selectAll(".legend")
@@ -227,7 +227,7 @@ var numCars = 30,
 	    .attr("y", 9)
 	    .attr("dy", ".35em")
 	    .style("text-anchor", "end")
-	    .text("slow");
+	    .text("slower");
 
   var carTwo = svg.append("g")
   	.attr("class","legend")
@@ -245,7 +245,7 @@ var numCars = 30,
       .attr("y", 9)
       .attr("dy", ".35em")
       .style("text-anchor", "end")
-      .text("fast");
+      .text("faster");
 
 
 	//=============SET UP ARRAYS===============
@@ -283,8 +283,8 @@ var numCars = 30,
 			        .duration(200)      
 			        .style("opacity", .8);      
 			    tooltip .html(
-			    	"velocity: " + 	format(d.v) + " m/s <br/>" +   
-			    	"acceleration: " + format(d.a) + " m/s^2"
+			    	"velocity: " + 	d3.round(d.v,1) + " m/s <br/>" +   
+			    	"acceleration: " + d3.round(d.a,2) + " m/s^2"
 			    	)  
 			        .style("left", (d3.event.pageX) + "px")     
 			        .style("top", (d3.event.pageY - 28) + "px");    

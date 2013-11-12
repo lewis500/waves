@@ -51,7 +51,7 @@
 			"file": "scripts/sim.js",
 			"settings":
 			{
-				"buffer_size": 10147,
+				"buffer_size": 10160,
 				"line_ending": "Unix"
 			}
 		},
@@ -59,7 +59,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 5046,
+				"buffer_size": 5012,
 				"line_ending": "Unix"
 			}
 		},
@@ -67,7 +67,7 @@
 			"file": "todo.txt",
 			"settings":
 			{
-				"buffer_size": 148,
+				"buffer_size": 96,
 				"line_ending": "Unix"
 			}
 		},
@@ -75,7 +75,7 @@
 			"file": "styles/style.css",
 			"settings":
 			{
-				"buffer_size": 2721,
+				"buffer_size": 2725,
 				"line_ending": "Unix"
 			}
 		}
@@ -418,15 +418,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10147,
+						"buffer_size": 10160,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1655,
-								1655
+								0,
+								0
 							]
 						],
 						"settings":
@@ -446,15 +446,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5046,
+						"buffer_size": 5012,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								485,
-								485
+								0,
+								0
 							]
 						],
 						"settings":
@@ -475,15 +475,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 148,
+						"buffer_size": 96,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								148,
-								148
+								0,
+								0
 							]
 						],
 						"settings":
@@ -502,15 +502,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2721,
+						"buffer_size": 2725,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								177,
-								177
+								67,
+								67
 							]
 						],
 						"settings":
@@ -537,15 +537,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10147,
+						"buffer_size": 10160,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								79,
-								79
+								0,
+								0
 							]
 						],
 						"settings":
