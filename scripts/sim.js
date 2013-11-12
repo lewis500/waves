@@ -176,8 +176,7 @@ var numCars = 30,
 	    .attr("height", 200)
 	  .append("xhtml:div")
 	  	// .attr("class","col-lg-5")
-	    .html('<button id="slow" class="btn btn-lg">Hit the brakes.</button>'
-	    	+ '<p>(start some traffic waves)</p>');
+	    .html('<button id="slow" class="btn btn-lg">Hit the brakes.</button>');
 			 
 
 	$("#slow").on("click",function(){
