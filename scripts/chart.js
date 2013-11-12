@@ -88,7 +88,7 @@ function Chart(measure){
   var labels = {s: "headway", v: "speed", a: "acceleration"}
 
   var margin = {top: 20, right: 20, bottom: 30, left: 50},
-      width = 800 - margin.left - margin.right,
+      width = 620 - margin.left - margin.right,
       height = 250 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
@@ -192,7 +192,7 @@ function Chart(measure){
 function Road(){
 
   var margin = {top: 0, right: 20, bottom: 10, left: 50},
-      width = 800 - margin.left - margin.right,
+      width = 620 - margin.left - margin.right,
       height = 50 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
@@ -234,7 +234,7 @@ function Road(){
       class: "car",
       fill: function(d,i){return d3.rgb(color(i)).brighter(0.5);},
       transform: function(d){ 
-        return "translate(" + x(d.hist[which].x) + "," + 10 +") scale(-.5, 0.5) rotate(0)";
+        return "translate(" + x(d.hist[which].x) + "," + 10 +") scale(-.4, 0.4) rotate(0)";
       }
     });
 
@@ -254,7 +254,7 @@ function Road(){
 
 
       car.attr("transform",function(d){ 
-        return "translate(" + x(d.hist[which].x) + "," + 10 +") scale(-.5, 0.5) rotate(0)";
+        return "translate(" + x(d.hist[which].x) + "," + 10 +") scale(-.4, 0.4) rotate(0)";
       });
 
       changeDots(which);
