@@ -137,7 +137,7 @@ function Chart(measure){
     .append("text")
       // .attr("transform", "rotate(-91)")
       // .attr("y", 10)
-      .attr("dy", "-1em")
+      .attr("dy", "-.5em")
       .attr("x", width)
       .attr("dx","-1em")
       .style("text-anchor", "end")
@@ -151,7 +151,7 @@ function Chart(measure){
       .attr("y", 10)
       // .attr("dy", ".71em")
       // .attr("x", "15px")
-      .attr("dx","4em")
+      .attr("dx","3.5em")
       .style("text-anchor", "end")
       .text(labels[measure]);
 
