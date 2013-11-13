@@ -1,5 +1,3 @@
 SHORT TERM
-spruce up the tooltip
 
-
-make it so the car actually decelerates when you slowclick it
+separate text and stuff

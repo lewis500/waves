@@ -94,12 +94,12 @@ var numCars = 30,
       
   var y = d3.scale.linear()
   		.domain([-7,1.5])
-  		.range([0,radius + 120])
-  		// .clamp(true);
+  		.range([0,radius + 110])
+  		.clamp(true);
 
-  var offset = 18;    
+  var offset = 20;    
 
-  var interiorGap = 110;
+  var interiorGap = 107;
 
   var roadMaker = d3.svg.arc()
   	.innerRadius(radius-50)
@@ -175,10 +175,8 @@ var numCars = 30,
 	    .attr("width", 200)
 	    .attr("height", 200)
 	  .append("xhtml:div")
-	  	// .attr("class","col-lg-5")
-	    .html('<button id="slow" class="btn btn-lg">Hit the brakes.</button>');
-			 
-
+	    .html('<button id="slow" class="btn btn-lg btn-danger">Hit the brakes</button>');
+	
 	$("#slow").on("click",function(){
 		Slow();
 	})
@@ -274,16 +272,22 @@ var numCars = 30,
 			})
 			.on("click", function(d){
 				d3.select(".highlighted").classed("highlighted", false)
+					.attr('opacity',0.05)
+					.attr("fill","#ecf0f1");
+
 				d3.select(this).select(".car-arc-inner")
-					.classed("highlighted", true);
+					.classed("highlighted", true)
+					.attr("fill", "#e74c3c")
+					.attr("opacity",0.5);
+
 			})
 			.on("mousemove", function(d) {      
 			    tooltip.transition()        
 			        .duration(200)      
 			        .style("opacity", .8);      
 			    tooltip .html(
-			    	"velocity: " + 	d3.round(d.v,1) + " m/s <br/>" +   
-			    	"acceleration: " + d3.round(d.a,2) + " m/s^2"
+			    	"velocity: " + 	d3.round(d.v,1) + " mph <br/>" +   
+			    	"acceleration: " + d3.round(d.a,2) + " mph/s"
 			    	)  
 			        .style("left", (d3.event.pageX) + "px")     
 			        .style("top", (d3.event.pageY - 28) + "px");    
@@ -302,10 +306,9 @@ var numCars = 30,
 				var extra = (i == 0) ? " highlighted" : "";
 				return "car-arc-inner" + extra;
 			},
-			opacity: 0.05,
-			fill: "#ecf0f1",
-		});
-
+			fill: function(d,i){return (i>0) ? "#ecf0f1": "#e74c3c"},
+			opacity: function(d,i){return (i>0) ? .05: .3},
+		})
 
 
 	car.append('g')
@@ -421,7 +424,7 @@ function Car(xo, index){
 	}
 
 	this.slowClick = function(){
-		this.slow = d3.range(10);
+		this.slow = d3.range(15);
 		// this.slow =  true;
 	}
 

@@ -14,6 +14,18 @@
       shape-rendering: crispEdges;
     }
 
+  .d3-slider-handle{
+    border: 1px solid #737373;
+    border-radius: 4px;
+    background: #eee;
+    background: linear-gradient(to bottom, #BBBBBB 0%, #565656 100%);
+
+  }
+
+/*    #pause{
+      background-color: #DDD;
+    }*/
+
     .line {
       fill: none;
       stroke-width: 2px;
@@ -59,11 +71,6 @@
       pointer-events: none;         
     }
 
-
-  .highlighted{
-    opacity: 0.2;
-    /*fill: coral;*/
-  }
 
 /*
     .tooltip{
