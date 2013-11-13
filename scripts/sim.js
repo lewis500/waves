@@ -43,7 +43,7 @@
 
 //===============PARAMETERS===================
 var margin = {top: 0, right: 20, bottom: 0, left: 20},
-    width = 620 - margin.left - margin.right,
+    width = 600 - margin.left - margin.right,
     height = 725 - margin.top - margin.bottom,
     radius = (width-150)/2,
     center = {x: width/2, y: height/2},
@@ -278,7 +278,7 @@ var numCars = 30,
 				d3.select(this).select(".car-arc-inner")
 					.classed("highlighted", true)
 					.attr("fill", "#e74c3c")
-					.attr("opacity",0.5);
+					.attr("opacity",0.4);
 
 			})
 			.on("mousemove", function(d) {      
@@ -286,10 +286,10 @@ var numCars = 30,
 			        .duration(200)      
 			        .style("opacity", .8);      
 			    tooltip .html(
-			    	"velocity: " + 	d3.round(d.v,1) + " mph <br/>" +   
-			    	"acceleration: " + d3.round(d.a,2) + " mph/s"
+			    	"velocity: " + 	d3.round(3*d.v,1) + " ft/s <br/>" +   
+			    	"acceleration: " + d3.round(3*d.a,2) + " ft/s<sup>2</sup>"
 			    	)  
-			        .style("left", (d3.event.pageX) + "px")     
+			        .style("left", (d3.event.pageX + 10) + "px")     
 			        .style("top", (d3.event.pageY - 28) + "px");    
 			    })                  
 			.on("mouseout", function(d) {       
@@ -307,7 +307,7 @@ var numCars = 30,
 				return "car-arc-inner" + extra;
 			},
 			fill: function(d,i){return (i>0) ? "#ecf0f1": "#e74c3c"},
-			opacity: function(d,i){return (i>0) ? .05: .3},
+			opacity: function(d,i){return (i>0) ? .05: .4},
 		})
 
 

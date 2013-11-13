@@ -1,0 +1,28 @@
+  A traffic wave is a block of slow-moving vehicles that travels backwards over time. If a road is crowded, then just one vehicle tapping the brakes can force each car behind it to brake to slower and slower speeds. It's a kind of domino effect.  this is the summary
+
+  Click "Hit the Brakes" to slow down the highlighted car, and wait until the traffic wave forms. Mouse over a car to slow down time and see its velocity and acceleration. Clicking on a car makes it the one that brakes when you press the button.
+
+
+  Detailed Explanation
+
+  The simplest explanation for why traffic waves happen is that people have reaction times....if the car in front of you slows down all of a sudden, you don't slow down until a couple seconds later. And the more time you lose reacting, the harder you have to brake to keep a safe distance. The effect continues onto the car behind you, and so on down the road.
+
+  Formal equations to explain these traffic patterns in terms of individual behavior are called <a href="http://en.wikipedia.org/wiki/Microscopic_traffic_flow_model#Car-following_models">car following models</a>. They were first developed by researchers at General Motors in the 1950s. The simplest such formula is:
+
+  <img src="http://latex.codecogs.com/svg.latex?a(t)=\lambda \cdot \Delta v(t-T)" border="0"/>
+
+  where <img src="http://latex.codecogs.com/svg.latex?a" border="0"/>  is a car's acceleration, <img src="http://latex.codecogs.com/svg.latex?\Delta v" border="0"/> is the difference between its velocity and next car's, <img src="http://latex.codecogs.com/svg.latex?T" border="0"/>  is reaction time and <img src="http://latex.codecogs.com/svg.latex?\lambda" border="0"/> is some constant that researchers estimate from data. The equation says, "At time <img src="http://latex.codecogs.com/svg.latex?t" border="0"/> , you accelerate at a rate proportional to the difference in speed between your car and the speed of the car you're following, but with a gap of <img src="http://latex.codecogs.com/svg.latex?T" border="0"/>  seconds." So if you're going faster than the car in front of you, then you slow down. And if you're going slower, you speed up.
+
+  This equation produces the graph below. At the 10-second mark, the grey car slows down, and the cars that brake later have to slow down to lower and lower minimum speeds. Each line shows the history of the speed of a different car.
+
+   Drag the slider above to see a little traffic wave.
+
+   With time, researchers have developed more complex models of traffic behavior that add more realism or agree more closely with data from traffic detectors. For example, our simple equation assumes that the car in front of you affects your behavior even if it's a mile away. Some of the first improvements on the equation added terms for the size of that gap and the fact cars can slow down much more quickly than they can speed up. You can read more about the history of car-following models <a href="http://ocw.mit.edu/courses/civil-and-environmental-engineering/1-225j-transportation-flow-systems-fall-2002/lecture-notes/carfollowinga.pdf">here</a>.
+
+  The equation used in the car circle above is relatively complex and is called the <a href="http://en.wikipedia.org/wiki/Intelligent_driver_model">Intelligent Driver Model.</a> It was proposed in 2000 by researchers at Dresden University of Technology, in Germany, and its creators have made a Java applet demonstration available <a href="http://www.traffic-simulation.de/">here</a>.
+
+  BIO
+
+  Lewis Lehe is getting a PhD in Civil Engineering at the University of California, Berkeley, where he researches electronic road tolling and runs the <a href="http://vudlab.com/#/"> Visualizing Urban Data idealab</a>.
+
+

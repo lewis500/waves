@@ -14,7 +14,7 @@ var vo = 40,
   c = 0.36;
 
 var cars = d3.range(numCars).map(function(d,i){
-    var x = i*150; 
+    var x = i*170;
     return new Car(x, i);
   });
 
@@ -88,7 +88,7 @@ function Chart(measure){
   var labels = {s: "headway", v: "speed", a: "acceleration"}
 
   var margin = {top: 20, right: 20, bottom: 30, left: 50},
-      width = 620 - margin.left - margin.right,
+      width = 600 - margin.left - margin.right,
       height = 250 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
@@ -192,7 +192,7 @@ function Chart(measure){
 function Road(){
 
   var margin = {top: 0, right: 20, bottom: 10, left: 50},
-      width = 620 - margin.left - margin.right,
+      width = 600 - margin.left - margin.right,
       height = 50 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
@@ -224,7 +224,6 @@ function Road(){
       })
 
   var car = svg.append("g")
-    // .attr("transform","translate(50,0)")
     .selectAll('cars')
     .data(cars)
       .enter()

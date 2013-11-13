@@ -9,25 +9,22 @@
     <link rel="stylesheet" href="styles/slider.css">
     <link rel="stylesheet" href="styles/style.css">
 
-
 </head>
 
 <!-- ============== BODY =================== -->
 
 <body>
 
-
   <div class="container">
 
-    <div class="chart">
-      <div id="velocity"></div>
-      <div id="road"></div>
-      <div style="margin-left: 40px; margin-bottom:5px">Time Slider</div>
-      <div id="slider1" style="margin-bottom: 40px"></div>
-    </div style="">
+    <button id="pause" class="btn btn-lg btn-warning">Pause</button>
+    <button id="reset" class="btn btn-lg btn-danger">Reset</button>
+
+    <div id = "roadCircle">
+      <div id="main" ></div>
+    </div>
 
   </div>
-
 
   <div id="sticker1" class="sticker" style="opacity: 0;">
     <svg width="60.78429"  height="26.852531" viewBox="0 0 60.78429 26.85253">
@@ -64,7 +61,6 @@
 
 <!-- ============== SCRIPTS =================== -->
 
-    <script src="scripts/chart.js"></script>
-
+    <script src="scripts/sim.js"></script>
 
 </html>

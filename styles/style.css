@@ -68,7 +68,8 @@
       color: white;
       font-family: "Open Sans";  
       border-radius: 6px;           
-      pointer-events: none;         
+      pointer-events: none;   
+      font-size: 14px;      
     }
 
 
