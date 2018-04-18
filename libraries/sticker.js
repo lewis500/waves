@@ -1,4 +1,6 @@
+// console.log('asdf')
 (function() {
+  // console.log('hello')
   d3.sticker = function(selector) {
     var string;
     var node;
